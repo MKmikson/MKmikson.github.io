@@ -46,7 +46,7 @@ p{
     height: 100%;
     place-items: center;
     display: flex;
-    width: 100px;
+    width: 110px;
 }
 
 #separator{
@@ -69,12 +69,18 @@ p{
     
 }
 
+
 #wikiTransfer{
     height: 45px;
     border-radius: 30px;
     font-size: large;
     color: white;
     background-color: rgb(11,40,71);
+}
+
+#examples{
+    margin-top: 4%;
+    text-align: center;
 }
 
 #footer{

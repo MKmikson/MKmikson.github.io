@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typy sortowań</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Typy szyfrowań</title>
+    <link rel="stylesheet" href="/index.css">
+    <script src="/app.js"></script>
 </head>
 <body>
     <div id="container">
-        <div id="titleBox" >
-            <h1>4 Typ sortowania danych</h1>
-            <h2>
-
-            </h2>
+            <!-- głowne menu -->
+        <div id="menu" >
+                    <!-- logo strony -->
+                <div id="logo">Logo</div>
+                    <!-- elementy menu -->
+                <div id="siteNav">
+                    <a href="/index.html" id="siteEl"><div>Strona Główna</div></a>
+                    <a href="/podstorny/type1.html" id="siteEl"><div >szyfr 1</div></a>
+                    <a href="/podstorny/type2.html" id="siteEl"><div >szyfr 2</div></a>
+                    <a href="/podstorny/type3.html" id="siteEl"><div >szyfr 3</div></a>
+                    <a href="/podstorny/type4.html" id="siteEl"><div >szyfr 4</div></a>
+                </div>            
         </div>
-        <div id="type4" class="sortType">
-
-        
+        <div id="separator"></div>
+            <!-- głowna tresc -->
+        <div  id="content">
+                <!-- opis strony -->
+            <div id="siteDescription">  
+                
+                <h1>Szyfr specjalny</h1>
+                <p id="opis">jeszce nie wiem jaki bedzie Szyfrowanie danych to zbiór technik służących do kodowania informacji wrażliwych lub osobistych w celu zapewnienia ich poufności.<br> Szyfrowanie uniemożliwia nieuprawnionym dostępu do danych. <br>Pozostają one nieczytelne dla osób nieposiadających klucza deszyfrującego</p>
+                
+            </div>
+                <!-- przyklady szyfrów -->
+            <div id="examples">
+                <input id="dane" type="text" ></input>
+                <button type="button" onclick="nowyOpis()">Kliknij po nowy opis</button>
+            </div>
         </div>
-        <div id="footer">
-            
-        </div>
-        
+        <div id="footer"> <p>Mikołaj Ronczewski</p> </div>
     </div>
 </body>
 </html>
