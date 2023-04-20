@@ -9,42 +9,26 @@
 </head>
 <body>
     <div id="container">
-        <div id="titleBox" >
-            <h1>Typy szyfrów danych</h1>
-            <p>
-                Na tej stronie znjadziesz kilka przykładów szyfrowania danych, ich zastosowania, <br> wady i zalety oraz przykładowe kody napisane w jezyku c++
-            </p>            
+        <div id="menu" >
+                <div id="logo">Logo</div>
+                <div id="siteNav">
+                    <a href="/index.html" id="siteEl"><div>Strona Główna</div></a>
+                    <a href="./podstorny/type1.html" id="siteEl"><div >szyfr 1</div></a>
+                    <a href="./podstorny/type2.html" id="siteEl"><div >szyfr 2</div></a>
+                    <a href="./podstorny/type3.html" id="siteEl"><div >szyfr 3</div></a>
+                    <a href="./podstorny/type4.html" id="siteEl"><div >szyfr 4</div></a>
+                </div>            
         </div>
-        <div  class="sortType">
-            <a href="./podstorny/type1.html">Szyfr Cezara:</a>
-            <p>
-                 Zwany jest też szyfrem przesuwającym, kodem Cezara lub przesunięciem Cezariańskim – jedna z najprostszych technik szyfrowania
-            </p>
+        <div id="separator"></div>
+        <div  id="content">
+            <div id="siteDescription">
+                <h1>Szyfry danych</h1>
+                <p>Szyfrowanie danych to zbiór technik służących do kodowania informacji wrażliwych lub osobistych w celu zapewnienia ich poufności.<br> Szyfrowanie uniemożliwia nieuprawnionym dostępu do danych. <br>Pozostają one nieczytelne dla osób nieposiadających klucza deszyfrującego</p>
+                <input id="wikiTransfer" type="button" value="Więcej informacji na temat szyfrów" onclick="window.location=('https://opensecurity.pl/szyfrowanie-kodowanie-hashowanie/')" />
+            </div>
+            <div></div>
         </div>
-        <div  class="sortType">
-            <a href="./podstorny/type2.html">Szyfr Ułamkowy:</a>
-            <p>
-                 
-                Szyfr ten polega na zapisaniu liter w postaci ułamków               
-            </p>
-        </div>
-        <div  class="sortType">
-            <a href="./podstorny/type3.html">Szyfr Pigpen:</a>
-            <p>
-                Szyfr masoński zwany również szyfrem pigpen, szyfrem wolnomularskim, lub szyfrem „kółko i krzyżyk” – geometryczny szyfr podstawieniowy, gdzie symbole wymienia się na litery umieszczone w odpowiednich figurach geometrycznych
-            </p>
-        </div>
-        <div  class="sortType">
-            <a href="./podstorny/type4.html">Szyfr specjalny...:</a>
-            <p>
-                 tekst do szyfru specjalnego
-                
-            </p>
-        </div>
-        <div id="footer">
-            <footer>Mikołaj Ronczewski</footer>
-        </div>
-        
+        <div id="footer"> <p>Mikołaj Ronczewski</p> </div>
     </div>
 </body>
 </html>
