@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+p{
+    font-size: large;
+}
+
+#container{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    width: 80%;
+    height: 90%;
+    background-color: rgb(210, 235, 255);
+}
+
+#titleBox{
+    
+    text-align: center;
+    margin-left: 5%;
+    width: 90%;
+    height: 50px;
+    background-color: rgb(109, 163, 194);
+}
+
+.sortType{
+    text-align: center;
+    margin-top: 6%;
+    margin-left: 5%;
+    width: 90%;
+    height: 140px;
+    background-color: rgb(161, 188, 204);
+}
+
+#type1{
+    text-align: center;
+    margin-top: 15%;
+    margin-left: 5%;
+    
+    width: 90%;
+    height: 700px;
+    background-color: rgb(161, 188, 204);
+}
+
+#menu{
+    text-align: left;
+}
+
+#type1Img{
+    margin-top: 20px;
+    width: 70%;
+    height: auto;
+}
+
+#footer{
+    margin-top: 10px;
+    text-align: center;
+
+}
