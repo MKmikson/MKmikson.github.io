@@ -13,14 +13,16 @@
             <!-- głowne menu -->
         <div id="menu" >
                     <!-- logo strony -->
-                <div id="logo">Logo</div>
+                <div id="logo">
+                    <h1>Rodzaje szyfrów</h1>
+                </div>
                     <!-- elementy menu -->
                 <div id="siteNav">
                     <a href="/index.html" id="siteEl"><div>Strona Główna</div></a>
-                    <a href="/podstorny/type1.html" id="siteEl"><div >szyfr 1</div></a>
-                    <a href="/podstorny/type2.html" id="siteEl"><div >szyfr 2</div></a>
-                    <a href="/podstorny/type3.html" id="siteEl"><div >szyfr 3</div></a>
-                    <a href="/podstorny/type4.html" id="siteEl"><div >szyfr 4</div></a>
+                    <a href="/podstorny/type1.html" id="siteEl"><div >Szyfr Cezara</div></a>
+                    <a href="/podstorny/type2.html" id="siteEl"><div >Szyfr Polibiusza</div></a>
+                    <a href="/podstorny/type3.html" id="siteEl"><div >Szyfr Vigenère'a</div></a>
+                    <a href="/podstorny/type4.html" id="siteEl"><div >Szyfr Vernama</div></a>
                 </div>            
         </div>
         <div id="separator"></div>
@@ -30,7 +32,21 @@
             <div id="siteDescription">  
                 
                 <h1>Szyfr specjalny</h1>
-                <p id="opis">jeszce nie wiem jaki bedzie Szyfrowanie danych to zbiór technik służących do kodowania informacji wrażliwych lub osobistych w celu zapewnienia ich poufności.<br> Szyfrowanie uniemożliwia nieuprawnionym dostępu do danych. <br>Pozostają one nieczytelne dla osób nieposiadających klucza deszyfrującego</p>
+                <p id="opis">
+                    Szyfr Vernama, znany również jako szyfr strumieniowy, to szyfr kryptograficzny, który generuje ciąg pseudolosowy bitów do zaszyfrowania tekstu jawnego. Każda litera tekstu jawnego jest szyfrowana za pomocą klucza, który składa się z ciągu bitów o takiej samej długości jak tekst jawnego.
+
+Plusy szyfru Vernama:
+
+Jest nieprzewidywalny i bezpieczny, ponieważ klucz jest generowany losowo i nie jest używany więcej niż raz.
+Zapewnia doskonałą poufność, ponieważ szyfrowany tekst jest jednorazowy, tzn. zaszyfrowany tekst nie może być odszyfrowany bez oryginalnego klucza.
+Nie ma ograniczeń co do długości tekstu jawnego, co oznacza, że szyfrowanie może być stosowane na dowolnie długich tekstach.
+Minusy szyfru Vernama:
+
+Wymaga bezpiecznego i losowego generowania klucza, który musi być zawsze takiej samej długości jak tekst jawnego. Generowanie klucza może być trudne i kosztowne.
+Szyfrowanie tekstu jest czasochłonne, ponieważ każda litera jest szyfrowana oddzielnie i wymaga dużej ilości operacji matematycznych.
+Wymaga bezpiecznego przesyłania klucza, ponieważ jeśli klucz zostanie skradziony lub przechwycony, osoba trzecia będzie w stanie odszyfrować zaszyfrowany tekst.
+W skrócie, szyfr Vernama jest jednym z najbezpieczniejszych szyfrów, ponieważ generuje losowe klucze, które są używane tylko raz. Jednak, wymaga bezpiecznego generowania i przesyłania klucza oraz jest czasochłonny w procesie szyfrowania tekstu.
+                </p>
                 
             </div>
                 <!-- przyklady szyfrów -->

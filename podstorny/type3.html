@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typy szyfrowań</title>
     <link rel="stylesheet" href="/index.css">
-    <script src="/app.js"></script>
+    
 </head>
 <body>
     <div id="container">
             <!-- głowne menu -->
         <div id="menu" >
                     <!-- logo strony -->
-                <div id="logo">Logo</div>
+                <div id="logo">
+                    <h1>Rodzaje szyfrów</h1>
+                </div>
                     <!-- elementy menu -->
                 <div id="siteNav">
                     <a href="/index.html" id="siteEl"><div>Strona Główna</div></a>
-                    <a href="/podstorny/type1.html" id="siteEl"><div >szyfr 1</div></a>
-                    <a href="/podstorny/type2.html" id="siteEl"><div >szyfr 2</div></a>
-                    <a href="/podstorny/type3.html" id="siteEl"><div >szyfr 3</div></a>
-                    <a href="/podstorny/type4.html" id="siteEl"><div >szyfr 4</div></a>
+                    <a href="/podstorny/type1.html" id="siteEl"><div >Szyfr Cezara</div></a>
+                    <a href="/podstorny/type2.html" id="siteEl"><div >Szyfr Polibiusza</div></a>
+                    <a href="/podstorny/type3.html" id="siteEl"><div >Szyfr Vigenère'a</div></a>
+                    <a href="/podstorny/type4.html" id="siteEl"><div >Szyfr Vernama</div></a>
                 </div>            
         </div>
         <div id="separator"></div>
@@ -28,14 +30,32 @@
         <div  id="content">
                 <!-- opis strony -->
             <div id="siteDescription">  
-                <h1>Szyfr 3</h1>
-                <p id="opis">jeszce nie wiem jaki bedzie Szyfrowanie danych to zbiór technik służących do kodowania informacji wrażliwych lub osobistych w celu zapewnienia ich poufności.<br> Szyfrowanie uniemożliwia nieuprawnionym dostępu do danych. <br>Pozostają one nieczytelne dla osób nieposiadających klucza deszyfrującego</p>
-                <button type="button" onclick="nowyOpis()">kliknij po nowy opis</button>
+                
+                <h1>Szyfr Vigenère'a</h1>
+                <p id="opis">Szyfr Vigenère'a to polialfabetyczny szyfr przestawieniowy, który używa kilku różnych alfabetów do zaszyfrowania tekstu. Polega na użyciu jednego klucza, który składa się z wielu liter. Klucz ten jest powtarzany cyklicznie do momentu, w którym długość klucza jest równa długości tekstu jawnego. Następnie każda litera tekstu jawnego jest szyfrowana przy użyciu litery klucza, a następnie zastosowanie odpowiedniego alfabetu, zależnego od pozycji litery klucza.
+
+                    Plusy szyfru Vigenère'a:
+                    
+                    Jest trudny do złamania przez ataki z użyciem analizy częstotliwości, ponieważ każda litera tekstu jawnego jest szyfrowana inną literą klucza.
+                    Zwiększa złożoność szyfru, ponieważ wymaga wielokrotnego użycia różnych alfabetów.
+                    Łatwość w użyciu i szyfrowanie tekstu jest szybkie.
+                    Minusy szyfru Vigenère'a:
+                    
+                    Szyfr Vigenère'a może być złamany za pomocą ataków z użyciem kryptoanalizy, takich jak analiza częstotliwości liter klucza.
+                    Jest podatny na ataki z użyciem metody Kasiski, która wykorzystuje powtarzające się ciągi liter w tekście zaszyfrowanym, aby odkryć długość klucza.
+                    Szyfr Vigenère'a nie ukrywa długości tekstu jawnego, co ułatwia atakującemu odkrycie klucza i złamanie szyfru.
+                    W skrócie, szyfr Vigenère'a oferuje zwiększoną ochronę przed atakami z użyciem analizy częstotliwości i wymaga użycia wielu różnych alfabetów, ale nie jest bezpieczny przed zaawansowanymi atakami kryptoanalitycznymi.
+                </p>
+                
             </div>
                 <!-- przyklady szyfrów -->
-            <div></div>
+            <div id="examples">
+                <input id="dane" type="text" ></input>
+                <button type="button" onclick="nowyOpis()">Kliknij po nowy opis</button>
+            </div>
         </div>
         <div id="footer"> <p>Mikołaj Ronczewski</p> </div>
     </div>
+    <script src="/app.js" ></script>
 </body>
 </html>

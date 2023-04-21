@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typy szyfrowań</title>
     <link rel="stylesheet" href="/index.css">
-    <script src="/app.js"></script>
+    
 </head>
 <body>
     <div id="container">
             <!-- głowne menu -->
         <div id="menu" >
                     <!-- logo strony -->
-                <div id="logo">Logo</div>
+                <div id="logo">
+                    <h1>Rodzaje szyfrów</h1>
+                </div>
                     <!-- elementy menu -->
                 <div id="siteNav">
                     <a href="/index.html" id="siteEl"><div>Strona Główna</div></a>
-                    <a href="/podstorny/type1.html" id="siteEl"><div >szyfr 1</div></a>
-                    <a href="/podstorny/type2.html" id="siteEl"><div >szyfr 2</div></a>
-                    <a href="/podstorny/type3.html" id="siteEl"><div >szyfr 3</div></a>
-                    <a href="/podstorny/type4.html" id="siteEl"><div >szyfr 4</div></a>
+                    <a href="/podstorny/type1.html" id="siteEl"><div >Szyfr Cezara</div></a>
+                    <a href="/podstorny/type2.html" id="siteEl"><div >Szyfr Polibiusza</div></a>
+                    <a href="/podstorny/type3.html" id="siteEl"><div >Szyfr Vigenère'a</div></a>
+                    <a href="/podstorny/type4.html" id="siteEl"><div >Szyfr Vernama</div></a>
                 </div>            
         </div>
         <div id="separator"></div>
@@ -28,14 +30,34 @@
         <div  id="content">
                 <!-- opis strony -->
             <div id="siteDescription">  
-                <h1>Szyfr 2</h1>
-                <p id="opis">jeszce nie wiem jaki bedzie Szyfrowanie danych to zbiór technik służących do kodowania informacji wrażliwych lub osobistych w celu zapewnienia ich poufności.<br> Szyfrowanie uniemożliwia nieuprawnionym dostępu do danych. <br>Pozostają one nieczytelne dla osób nieposiadających klucza deszyfrującego</p>
-                <button type="button" onclick="nowyOpis()">kliknij po nowy opis</button>
+                
+                <h1>Szyfr Polibiusza</h1>
+                <p id="opis">Szyfr Polibiusza to szyfr polegający na zastępowaniu liter tekstu jawnego przez ich odpowiedniki w tabeli Polibiusza. Tabela ta składa się z dwóch wierszy i dwóch kolumn, w których litery alfabetu są zapisywane w parach. Każda para liter jest zastępowana przez dwucyfrowy kod, który odpowiada pozycji pary w tabeli.
+
+                    Przykładowo, litera "A" jest zastępowana przez "11", litera "B" przez "12", a litera "Z" przez "26". Tekst jasny jest następnie zapisywany w postaci dwucyfrowych liczb, co umożliwia szyfrowanie tekstu przy użyciu prostych operacji matematycznych.
+                    
+                    Plusy szyfru Polibiusza:
+                    
+                    Łatwy w zastosowaniu i zrozumieniu.
+                    Zapewnia dobre zabezpieczenie przed analizą częstotliwości liter, ponieważ każda litera jest zastępowana przez dwucyfrowy kod.
+                    Szyfrowanie i deszyfrowanie tekstu jest łatwe i szybkie.
+                    Minusy szyfru Polibiusza:
+                    
+                    Szyfr Polibiusza nie jest bezpieczny przed atakami z użyciem analizy częstotliwości dwucyfrowych kodów, co może ujawnić wzorce w tekście.
+                    Szyfr Polibiusza nie ukrywa długości wiadomości, co ułatwia atakującemu odkrycie klucza i złamanie szyfru.
+                    Szyfr Polibiusza nie chroni przed atakami z użyciem technik kryptoanalitycznych, takich jak analiza częstotliwości trójliterowych słów.
+                    W skrócie, szyfr Polibiusza jest łatwy w zastosowaniu i oferuje dobre zabezpieczenie przed analizą częstotliwości liter, ale nie jest bezpieczny przed zaawansowanymi atakami kryptoanalitycznymi.
+                </p>
+                
             </div>
                 <!-- przyklady szyfrów -->
-            <div></div>
+            <div id="examples">
+                <input id="dane" type="text" ></input>
+                <button type="button" onclick="nowyOpis()">Kliknij po nowy opis</button>
+            </div>
         </div>
         <div id="footer"> <p>Mikołaj Ronczewski</p> </div>
     </div>
+    <script src="/app.js" ></script>
 </body>
 </html>

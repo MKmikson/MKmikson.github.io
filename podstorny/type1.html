@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typy szyfrowań</title>
     <link rel="stylesheet" href="/index.css">
-    <script src="/app.js"></script>
+    
 </head>
 <body>
     <div id="container">
             <!-- głowne menu -->
         <div id="menu" >
                     <!-- logo strony -->
-                <div id="logo">Logo</div>
+                <div id="logo">
+                    <h1>Rodzaje szyfrów</h1>
+                </div>
                     <!-- elementy menu -->
                 <div id="siteNav">
                     <a href="/index.html" id="siteEl"><div>Strona Główna</div></a>
-                    <a href="/podstorny/type1.html" id="siteEl"><div >szyfr 1</div></a>
-                    <a href="/podstorny/type2.html" id="siteEl"><div >szyfr 2</div></a>
-                    <a href="/podstorny/type3.html" id="siteEl"><div >szyfr 3</div></a>
-                    <a href="/podstorny/type4.html" id="siteEl"><div >szyfr 4</div></a>
+                    <a href="/podstorny/type1.html" id="siteEl"><div >Szyfr Cezara</div></a>
+                    <a href="/podstorny/type2.html" id="siteEl"><div >Szyfr Polibiusza</div></a>
+                    <a href="/podstorny/type3.html" id="siteEl"><div >Szyfr Vigenère'a</div></a>
+                    <a href="/podstorny/type4.html" id="siteEl"><div >Szyfr Vernama</div></a>
                 </div>            
         </div>
         <div id="separator"></div>
@@ -28,14 +30,34 @@
         <div  id="content">
                 <!-- opis strony -->
             <div id="siteDescription">  
-                <h1>Szyfr 1</h1>
-                <p id="opis">jeszce nie wiem jaki bedzie Szyfrowanie danych to zbiór technik służących do kodowania informacji wrażliwych lub osobistych w celu zapewnienia ich poufności.<br> Szyfrowanie uniemożliwia nieuprawnionym dostępu do danych. <br>Pozostają one nieczytelne dla osób nieposiadających klucza deszyfrującego</p>
-                <button type="button" onclick="nowyOpis()">kliknij po nowy opis</button>
+                
+                <h1>Szyfr Cezara</h1>
+                <p id="opis">Szyfr Cezara to jeden z najprostszych szyfrów przesuwających, który działa poprzez przesunięcie każdej litery w tekście o stałą liczbę pozycji w alfabecie. Konkretnie, każda litera jest zastępowana przez literę oddaloną od niej o określoną liczbę pozycji w alfabecie. Ta liczba nazywana jest kluczem szyfru, który musi być znany odbiorcy, aby odkodować wiadomość.
+
+                    Przykładowo, jeśli kluczem szyfru jest 3, to litera "A" zostanie zastąpiona przez literę "D", litera "B" zostanie zastąpiona przez "E", a litera "Z" zostanie zastąpiona przez literę "C". Przesunięcie może być wykonane w prawo lub w lewo i może być dowolną liczbą od 1 do 25.
+                    
+                    Plusy szyfru Cezara:
+                    
+                    Bardzo łatwy w zastosowaniu i zrozumieniu.
+                    Szybki do zaszyfrowania i odszyfrowania.
+                    Oferuje pewną formę zabezpieczenia przed atakiem siłowym, ponieważ klucz może przyjąć jedną z 25 możliwych wartości.
+                    Minusy szyfru Cezara:
+                    
+                    Szyfr Cezara jest bardzo łatwy do złamania, ponieważ liczba możliwych kluczy jest niewielka i atakujący może stosować metodę "brute force" (próbowanie wszystkich możliwych kombinacji kluczy).
+                    Szyfr Cezara nie ukrywa częstotliwości występowania liter w tekście jawnym, co ułatwia kryptoanalizę.
+                    Szyfr Cezara nie chroni przed atakami z użyciem analizy częstotliwości trójliterowych słów, które mogą być zidentyfikowane nawet w zaszyfrowanym tekście.
+                    Szyfr Cezara nie jest bezpieczny w przypadku, gdy atakujący zna jakiś fragment tekstu jawnego, ponieważ może on użyć go do odkrycia klucza i odszyfrowania reszty tekstu.
+                    W skrócie, szyfr Cezara jest łatwy do zrozumienia i zastosowania, ale nie oferuje wystarczającej ochrony przed zaawansowanymi metodami kryptoanalitycznymi.</p>
+                
             </div>
                 <!-- przyklady szyfrów -->
-            <div></div>
+            <div id="examples">
+                <input id="dane" type="text" ></input>
+                <button type="button" onclick="nowyOpis()">Kliknij po nowy opis</button>
+            </div>
         </div>
         <div id="footer"> <p>Mikołaj Ronczewski</p> </div>
     </div>
+    <script src="/modules/szyfrCezara/szyfrator.js" ></script>
 </body>
 </html>
