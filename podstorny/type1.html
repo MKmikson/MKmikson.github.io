@@ -38,18 +38,19 @@
                 </p>
                 <div id="opis-zal">
                     <p id="opis-p">Plusy szyfru Cezara:
-                    
-                        Bardzo łatwy w zastosowaniu i zrozumieniu.
-                        Szybki do zaszyfrowania i odszyfrowania.
-                        Oferuje pewną formę zabezpieczenia przed atakiem siłowym, ponieważ klucz może przyjąć jedną z 25 możliwych wartości.
+                        <ul>
+                            <li>Bardzo łatwy w zastosowaniu i zrozumieniu</li>
+                            <li>Szybki do zaszyfrowania i odszyfrowania</li>
+                            <li>Oferuje pewną formę zabezpieczenia przed atakiem siłowym, ponieważ klucz może przyjąć jedną z 25 możliwych wartości</li>
+                        </ul>
                     </p>
                     <p id="opis-m">
                         Minusy szyfru Cezara:
                         <ul>
-                        Szyfr Cezara jest bardzo łatwy do złamania, ponieważ liczba możliwych kluczy jest niewielka i atakujący może stosować metodę "brute force" (próbowanie wszystkich możliwych kombinacji kluczy).
-                        Szyfr Cezara nie ukrywa częstotliwości występowania liter w tekście jawnym, co ułatwia kryptoanalizę.
-                        Szyfr Cezara nie chroni przed atakami z użyciem analizy częstotliwości trójliterowych słów, które mogą być zidentyfikowane nawet w zaszyfrowanym tekście.
-                        Szyfr Cezara nie jest bezpieczny w przypadku, gdy atakujący zna jakiś fragment tekstu jawnego, ponieważ może on użyć go do odkrycia klucza i odszyfrowania reszty tekstu.
+                            <li>Szyfr Cezara jest bardzo łatwy do złamania, ponieważ liczba możliwych kluczy jest niewielka i atakujący może stosować metodę "brute force" (próbowanie wszystkich możliwych kombinacji kluczy)</li>
+                            <li>Szyfr Cezara nie ukrywa częstotliwości występowania liter w tekście jawnym, co ułatwia kryptoanalizę</li>
+                            <li>Szyfr Cezara nie chroni przed atakami z użyciem analizy częstotliwości trójliterowych słów, które mogą być zidentyfikowane nawet w zaszyfrowanym tekście</li>
+                            <li>Szyfr Cezara nie jest bezpieczny w przypadku, gdy atakujący zna jakiś fragment tekstu jawnego, ponieważ może on użyć go do odkrycia klucza i odszyfrowania reszty tekstu</li>
                         </ul>
                     </p>
                 </div>
@@ -94,24 +95,30 @@ string deszyfrujCezarem(string wiadomosc, int klucz) {
                 </div>
                     <!-- input i dzialanie szyfru -->
                 <div id="examples">
-                    <div>
-                        <div>
+                    <div id="example-input">
+                        <div id="example-input-dane">
+                            <h1>Tekst do zaszyfrowania</h1>
                             <input id="dane" type="text" ></input>
-                            <p>Tekst do zaszyfrowania</p>
+                            
+                        </div>
+                        <div id="example-input-key">
+                            <h1>Przesuniecie</h1>
+                            <input id="przes" type="text" ></input>
+                            
                         </div>
                         <div>
-                            <input id="przes" type="text" ></input>
-                            <p>Przesuniecie</p>
-                        <button type="button" onclick="displayS()">Kliknij aby uruchomić szyfrowanie</button>
+                            <button type="button" id="hash-btn" onclick="displayS()">Kliknij aby uruchomić szyfrowanie</button> 
                         </div>
                     </div>
-                    <div>
-                        <p id="wynik"></p>
-                    </div>
+                    
+                </div>
+                <div id="example-output">
+                    <h1 id="example-output-h">Wynik: </h1>
+                    <p id="wynik"></p>
                 </div>
             </div>
         </div>
-        <div id="footer"> <p>Mikołaj Ronczewski</p> </div>
+        <div id="footer"> <p id="footer-p">Mikołaj Ronczewski</p> </div>
     </div>
     <script src="/modules/szyfrCezara/szyfrator.js" ></script>
 </body>
