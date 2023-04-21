@@ -1,10 +1,49 @@
 body{
+    
     font-family: 'Mukta', sans-serif;
 }
 
 p{
     font-size: larger;
 }
+
+
+#code-cpp{
+    margin-left: 24%;
+    height: 80%;
+    width: 50%;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    display: flex;
+    background-color: rgb(31, 31, 31);
+    border: aqua 6px solid;
+}
+
+#code-cppS{
+    
+    height: 100%;
+    width: 60%;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    display: flex;
+
+
+}
+
+#code-cppD{
+    height: 100%;
+    margin-left: 5%;
+    width: 60%;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    display: flex;
+
+
+}
+
 
 #container{
 
@@ -77,6 +116,11 @@ p{
     
 }
 
+#opis{
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
 
 #wikiTransfer{
     height: 45px;
@@ -87,8 +131,16 @@ p{
 }
 
 #examples{
+    display: flex;
+    color:white;
+    margin-left: 24%;
+    width: 51%;
+    align-items: center;
+    height: 100px;
     margin-top: 4%;
-    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 4%;
+    background-color: black;
 }
 
 #hashEx{

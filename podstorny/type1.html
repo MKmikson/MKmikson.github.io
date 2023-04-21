@@ -33,32 +33,81 @@
                 <h1>Szyfr Cezara</h1>
                 <p id="opis">Szyfr Cezara to jeden z najprostszych szyfrów przesuwających, który działa poprzez przesunięcie każdej litery w tekście o stałą liczbę pozycji w alfabecie. Konkretnie, każda litera jest zastępowana przez literę oddaloną od niej o określoną liczbę pozycji w alfabecie. Ta liczba nazywana jest kluczem szyfru, który musi być znany odbiorcy, aby odkodować wiadomość.
 
-                    Przykładowo, jeśli kluczem szyfru jest 3, to litera "A" zostanie zastąpiona przez literę "D", litera "B" zostanie zastąpiona przez "E", a litera "Z" zostanie zastąpiona przez literę "C". Przesunięcie może być wykonane w prawo lub w lewo i może być dowolną liczbą od 1 do 25.
+                    Przykładowo, jeśli kluczem szyfru jest 3, to litera "A" zostanie zastąpiona przez literę "D", litera "B" zostanie zastąpiona przez "E", a litera "Z" zostanie zastąpiona przez literę "C". Przesunięcie może być wykonane w prawo lub w lewo i może być dowolną liczbą od 1 do 25.  W skrócie, szyfr Cezara jest łatwy do zrozumienia i zastosowania, ale nie oferuje wystarczającej ochrony przed zaawansowanymi metodami kryptoanalitycznymi.
                     
-                    Plusy szyfru Cezara:
+                </p>
+                <div id="opis-zal">
+                    <p id="opis-p">Plusy szyfru Cezara:
                     
-                    Bardzo łatwy w zastosowaniu i zrozumieniu.
-                    Szybki do zaszyfrowania i odszyfrowania.
-                    Oferuje pewną formę zabezpieczenia przed atakiem siłowym, ponieważ klucz może przyjąć jedną z 25 możliwych wartości.
-                    Minusy szyfru Cezara:
-                    
-                    Szyfr Cezara jest bardzo łatwy do złamania, ponieważ liczba możliwych kluczy jest niewielka i atakujący może stosować metodę "brute force" (próbowanie wszystkich możliwych kombinacji kluczy).
-                    Szyfr Cezara nie ukrywa częstotliwości występowania liter w tekście jawnym, co ułatwia kryptoanalizę.
-                    Szyfr Cezara nie chroni przed atakami z użyciem analizy częstotliwości trójliterowych słów, które mogą być zidentyfikowane nawet w zaszyfrowanym tekście.
-                    Szyfr Cezara nie jest bezpieczny w przypadku, gdy atakujący zna jakiś fragment tekstu jawnego, ponieważ może on użyć go do odkrycia klucza i odszyfrowania reszty tekstu.
-                    W skrócie, szyfr Cezara jest łatwy do zrozumienia i zastosowania, ale nie oferuje wystarczającej ochrony przed zaawansowanymi metodami kryptoanalitycznymi.</p>
+                        Bardzo łatwy w zastosowaniu i zrozumieniu.
+                        Szybki do zaszyfrowania i odszyfrowania.
+                        Oferuje pewną formę zabezpieczenia przed atakiem siłowym, ponieważ klucz może przyjąć jedną z 25 możliwych wartości.
+                    </p>
+                    <p id="opis-m">
+                        Minusy szyfru Cezara:
+                        <ul>
+                        Szyfr Cezara jest bardzo łatwy do złamania, ponieważ liczba możliwych kluczy jest niewielka i atakujący może stosować metodę "brute force" (próbowanie wszystkich możliwych kombinacji kluczy).
+                        Szyfr Cezara nie ukrywa częstotliwości występowania liter w tekście jawnym, co ułatwia kryptoanalizę.
+                        Szyfr Cezara nie chroni przed atakami z użyciem analizy częstotliwości trójliterowych słów, które mogą być zidentyfikowane nawet w zaszyfrowanym tekście.
+                        Szyfr Cezara nie jest bezpieczny w przypadku, gdy atakujący zna jakiś fragment tekstu jawnego, ponieważ może on użyć go do odkrycia klucza i odszyfrowania reszty tekstu.
+                        </ul>
+                    </p>
+                </div>
                 
             </div>
                 <!-- przyklady szyfrów -->
             <div>
                     <!-- kod c++ -->
-                <div>
-                    
+                <div id="code-cpp">
+                    <pre class="language-javascript" id="code-cppS">
+#include iostream
+#include string
+using namespace std;
+
+string szyfrujCezarem(string wiadomosc, int klucz) {
+    string wynik = "";
+    for (int i = 0; i < wiadomosc.length(); i++) {
+        char c = wiadomosc[i];
+        if (isalpha(c)) {
+            c = toupper(c);
+            c = (((c - 65) + klucz) % 26) + 65;
+        }
+        wynik += c;
+    }
+    return wynik;
+}
+                        </pre>
+                        <pre id="code-cppD">
+string deszyfrujCezarem(string wiadomosc, int klucz) {
+    string wynik = "";
+    for (int i = 0; i < wiadomosc.length(); i++) {
+        char c = wiadomosc[i];
+        if (isalpha(c)) {
+            c = toupper(c);
+            c = (((c - 65) - klucz + 26) % 26) + 65;
+        }
+        wynik += c;
+    }
+    return wynik;
+}
+</pre>
                 </div>
                     <!-- input i dzialanie szyfru -->
                 <div id="examples">
-                    <input id="dane" type="text" ></input>
-                    <button type="button" onclick="nowyOpis()">Kliknij po nowy opis</button>
+                    <div>
+                        <div>
+                            <input id="dane" type="text" ></input>
+                            <p>Tekst do zaszyfrowania</p>
+                        </div>
+                        <div>
+                            <input id="przes" type="text" ></input>
+                            <p>Przesuniecie</p>
+                        <button type="button" onclick="displayS()">Kliknij aby uruchomić szyfrowanie</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p id="wynik"></p>
+                    </div>
                 </div>
             </div>
         </div>

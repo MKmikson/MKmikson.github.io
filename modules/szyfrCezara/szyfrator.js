@@ -39,7 +39,9 @@ function cezar(s, k) { // s-tekst jawny, k-przesuniecie
     return result; // zwracamy odszyfrowany tekst
 }  
   
-function nowyOpis() {
+function displayS() {
+  let przes = document.getElementById("przes").value;
   let inputV = document.getElementById('dane').value;
-  document.getElementById('opis').innerHTML = inputV;
+  console.log(inputV, przes);
+  document.getElementById('wynik').innerHTML = cezar(inputV, przes);
   }
