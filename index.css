@@ -7,6 +7,18 @@ p{
     font-size: larger;
 }
 
+#explanation{
+    margin-top: -70px;
+    place-items: center;
+    display: flex;
+    float: left;
+    margin-left: 24%;
+    width: 50%;
+    justify-content: space-evenly;
+    /* border: black 4px solid; */
+    margin-bottom: 4%;
+}
+
 #wynik{
     text-align: right;
     width: 50%; 

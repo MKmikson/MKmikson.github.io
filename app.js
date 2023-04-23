@@ -1,12 +1,12 @@
-// import { deszyfr } from "./components/deszyfrator";
-function nowyOpis() {
+// // import { deszyfr } from "./components/deszyfrator";
+// function nowyOpis() {
     
-    let inputV = document.getElementById('dane').value;
-    document.getElementById('opis').innerHTML = inputV;
-    // deszyfr();
+//     let inputV = document.getElementById('dane').value;
+//     document.getElementById('opis').innerHTML = inputV;
+//     // deszyfr();
     
-}
-// nowyOpis();
+// }
+// // nowyOpis();
 
 
 
