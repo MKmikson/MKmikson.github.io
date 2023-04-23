@@ -7,6 +7,12 @@ p{
     font-size: larger;
 }
 
+#wynik{
+    text-align: right;
+    width: 50%; 
+    margin-right: -15%;
+}
+
 #opis-p{
     text-align: center;
 }
@@ -35,6 +41,18 @@ p{
     border: aqua 6px solid;
 }
 
+#code-cpp-Ver{
+    margin-left: 9%;
+    height: 80%;
+    width: 82%;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    display: flex;
+    background-color: rgb(31, 31, 31);
+    border: aqua 6px solid;
+}
+
 #code-cppS{
     
     height: 100%;
@@ -50,6 +68,18 @@ p{
 #code-cppD{
     height: 100%;
     margin-left: 5%;
+    width: 60%;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    display: flex;
+
+
+}
+#code-cppM{
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 2%;
     width: 60%;
     justify-content: center;
     color:white;
@@ -165,9 +195,9 @@ p{
 }
 
 #opis{
-    width: 80%;
+    width: 70%;
     text-align: center;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
 #wikiTransfer{
@@ -306,7 +336,7 @@ p{
     margin-top: -22px; 
     width: 100%;
     height: 12%;
-    background-color: rgb(82, 198, 221);
+    background-color: rgb(66, 217, 247);
 }
 
 

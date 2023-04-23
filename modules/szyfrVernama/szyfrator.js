@@ -1,76 +1,46 @@
-function szyfrujVernama(tekst, klucz) {
-    let zaszyfrowanyTekst = ""; // zmienna, do której będziemy dodawać zaszyfrowane litery
-  
-    // iterujemy po każdym znaku w tekście
-    for (let i = 0; i < tekst.length; i++) {
-      let litera = tekst[i].toUpperCase(); // pobieramy kolejną literę i zamieniamy ją na dużą literę
-  
-      // jeśli litera jest literą alfabetu, szyfrujemy ją, w przeciwnym razie zostawiamy niezmienioną
-      if (/^[A-Z]$/.test(litera)) {
-        let kluczIndex = i % klucz.length; // obliczamy indeks klucza dla bieżącej litery
-  
-        // generujemy klucz zaszyfrowania na podstawie wartości ASCII kolejnych znaków klucza
-        let kluczZaszyfrowany = klucz.split("").map((ch, index) => {
-          let kod = ch.charCodeAt(0);
-          let kluczIndex = (i + index) % klucz.length;
-          let kluczKod = klucz.charCodeAt(kluczIndex);
-          let zaszyfrowanyKod = (kod + kluczKod - 65) % 26 + 65;
-          return String.fromCharCode(zaszyfrowanyKod);
-        }).join("");
-  
-        // obliczamy kod ASCII zaszyfrowanej litery
-        let zaszyfrowanyKod = litera.charCodeAt(0) + kluczZaszyfrowany.charCodeAt(kluczIndex) - 130;
-  
-        // upewniamy się, że kod ASCII nie wykracza poza zakres liter alfabetu
-        if (zaszyfrowanyKod > 90) {
-          zaszyfrowanyKod -= 26;
-        }
-  
-        // dodajemy zaszyfrowaną literę do zaszyfrowanego tekstu
-        zaszyfrowanyTekst += String.fromCharCode(zaszyfrowanyKod);
-      } else {
-        zaszyfrowanyTekst += litera; // jeśli to nie litera alfabetu, dodajemy niezmienioną literę do zaszyfrowanego tekstu
-      }
-    }
-  
-    return zaszyfrowanyTekst; // zwracamy tekst zaszyfrowany szyfrem Vernama
+// funkcja kodująca wiadomość przy użyciu klucza
+function szyfrujVernama(wiadomosc, klucz) {
+  let szyfrogram = '';
+  for (let i = 0; i < wiadomosc.length; i++) {
+      // operacja XOR na kolejnych bajtach wiadomości i klucza
+      let c = String.fromCharCode(wiadomosc.charCodeAt(i) ^ klucz.charCodeAt(i));
+      szyfrogram += c;
   }
-  
-  function deszyfrujVernama(zaszyfrowanyTekst, klucz) {
-    let odszyfrowanyTekst = ""; // zmienna, do której będziemy dodawać odszyfrowane litery
-  
-    // iterujemy po każdym znaku w zaszyfrowanym tekście
-    for (let i = 0; i < zaszyfrowanyTekst.length; i++) {
-      let litera = zaszyfrowanyTekst[i].toUpperCase(); // pobieramy kolejną literę zaszyfrowanego tekstu i zamieniamy ją na dużą literę
-  
-      // jeśli litera jest literą alfabetu, odszyfrowujemy ją, w przeciwnym razie zostawiamy niezmienioną
-      if (/^[A-Z]$/.test(litera)) {
-        let kluczIndex = i % klucz.length; // obliczamy indeks klucza dla bieżącej litery
-  
-        // generujemy klucz zaszyfrowania na podstawie wartości ASCII kolejnych znaków klucza
-        let kluczZaszyfrowany = klucz.split("").map((ch, index) => {
-          let kod = ch.charCodeAt(0);
-          let kluczIndex = (i + index) % klucz.length;
-          let kluczKod = klucz.charCodeAt(kluczIndex);
-          let zaszyfrowanyKod = (kod + kluczKod - 65) % 26 + 65;
-          return String.fromCharCode(zaszyfrowanyKod);
-        }).join("");
-  
-        // obliczamy kod ASCII odszyfrowanej litery
-        let odszyfrowanyKod = litera.charCodeAt(0) - kluczZaszyfrowany.charCodeAt(kluczIndex) + 65;
-  
-        // upewniamy się, że kod ASCII nie wykracza poza zakres liter alfabetu
-        if (odszyfrowanyKod < 65) {
-          odszyfrowanyKod += 26;
-        }
-  
-        // dodajemy odszyfrowaną literę do odszyfrowanego tekstu
-        odszyfrowanyTekst += String.fromCharCode(odszyfrowanyKod);
-      } else {
-        odszyfrowanyTekst += litera; // jeśli to nie litera alfabetu, dodajemy niezmienioną literę do odszyfrowanego tekstu
-      }
-    }
-  
-    return odszyfrowanyTekst; // zwracamy tekst odszyfrowany szyfrem Vernama
+  return szyfrogram;
+}
+
+// funkcja generująca losowy klucz o podanej długości
+function generujKlucz(dlugosc) {
+  let klucz = '';
+  // generator liczb losowych
+  for (let i = 0; i < dlugosc; i++) {
+      // generowanie kolejnego bajtu klucza
+      let bajt = Math.floor(Math.random() * 256);
+      klucz += String.fromCharCode(bajt);
   }
+  return klucz;
+}
+
+function displayS() {
+  let wiadomosc = document.getElementById('dane').value;
+
+  if (document.getElementById('przes').value =="") {
+    var klucz = generujKlucz(wiadomosc.length);// generowanie klucza o takiej samej długości jak wiadomość
+    document.getElementById('przes').value = klucz;
+  } else {
+    console.log("weszlo do ze istnieje klucz");
+    var klucz = document.getElementById('przes').value;
+  } 
+
+  console.log('Wiadomość: ' + wiadomosc);
+  console.log('Klucz: ' + klucz);
+  let szyfrogram = szyfrujVernama(wiadomosc, klucz); // szyfrowanie wiadomości przy użyciu klucza
+  console.log('Zaszyfrowana wiadomość: ' + szyfrogram);
+  let odszyfrowanaWiadomosc = szyfrujVernama(szyfrogram, klucz); // odszyfrowywanie wiadomości przy użyciu tego samego klucza
+  console.log('Odszyfrowana wiadomość: ' + odszyfrowanaWiadomosc);
   
+  document.getElementById('wynik').innerHTML = szyfrogram;
+  }
+// testowanie działania szyfru Vernama
+
+
