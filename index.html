@@ -31,7 +31,14 @@
                 <!-- opis strony -->
             <div id="siteDescription">  
                 <h1>Szyfry danych</h1>
-                <p>Szyfrowanie danych to zbiór technik służących do kodowania informacji wrażliwych lub osobistych w celu zapewnienia ich poufności.<br> Szyfrowanie uniemożliwia nieuprawnionym dostępu do danych. <br>Pozostają one nieczytelne dla osób nieposiadających klucza deszyfrującego</p>
+                <p>Szyfrowanie to proces przekształcania danych w sposób, który utrudnia lub uniemożliwia ich odczytanie przez osoby nieuprawnione.<br> W zależności od sposobu działania, wyróżnia się kilka rodzajów szyfrów:</p>
+                <ul id="siteDescription-list">
+                    <li><p>Szyfry symetryczne - oparte na jednym kluczu, który jest używany zarówno do szyfrowania, jak i deszyfrowania danych</p></li>
+                    <li><p>Szyfry asymetryczne - oparte na dwóch kluczach: publicznym i prywatnym. Klucz publiczny jest używany do szyfrowania danych, a klucz prywatny do ich deszyfrowania</p></li>
+                    <li><p>Szyfry strumieniowe - działają na zasadzie generowania ciągu pseudolosowych bitów, który następnie jest łączony z tekstem w celu jego zaszyfrowania</p></li>
+                    <li><p>Szyfry blokowe - operują na blokach danych o stałej długości. Każdy blok jest szyfrowany z użyciem klucza, a następnie łączony z kolejnym blokiem</p></li>
+                </ul>
+                <p>Szyfrowanie jest szeroko stosowane w celu zabezpieczenia danych przed dostępem osób nieuprawnionych,<br> na przykład podczas przesyłania poufnych informacji przez internet, czy też w systemach bankowych</p>
                 <input  id="wikiTransfer" type="button"  value="Więcej informacji na temat szyfrów" onclick="window.location=('https://opensecurity.pl/szyfrowanie-kodowanie-hashowanie/')" />
             </div>
                 <!-- przyklady szyfrów -->
@@ -52,7 +59,7 @@
                         <h1>Szyfr Polibiusza</h1>
                     </div>
                     <div id="ex-desc">
-                        <p>Szyfr Polibiusza to prosty szyfr zastępujący litery alfabetu dwucyfrowymi kodami. Jest łatwy w użyciu i chroni przed analizą częstotliwości liter, ale nie jest bezpieczny przed zaawansowanymi atakami kryptoanalitycznymi.</p>
+                        <p>Szyfr Polibiusza to prosty szyfr zastępujący litery alfabetu dwucyfrowymi kodami. Jest łatwy w użyciu i chroni przed analizą częstotliwości liter, ale nie jest bezpieczny przed zaawansowanymi atakami kryptoanalitycznymi</p>
                     </div>
                     <a href="/podstorny/type2.html"><input type="button" value="Więcej informacji o szyfrze Polibiusza" id="ex-desc-btn"></a>
                 </div>
@@ -61,7 +68,7 @@
                         <h1>Szyfr Vigenère'a</h1>
                     </div>
                     <div id="ex-desc">
-                        <p>Szyfr Vigenère'a to polialfabetyczny szyfr przestawieniowy, który jest trudny do złamania przez ataki z użyciem analizy częstotliwości. Jednakże, jest podatny na ataki z użyciem metody Kasiski oraz nie ukrywa długości tekstu jawnego.</p>
+                        <p>Szyfr Vigenère'a to polialfabetyczny szyfr przestawieniowy, który jest trudny do złamania przez ataki z użyciem analizy częstotliwości. Jednakże, jest podatny na ataki z użyciem metody Kasiski oraz nie ukrywa długości tekstu jawnego</p>
                     </div>
                     <a href="/podstorny/type3.html"><input type="button" value="Więcej informacji o szyfrze Vigenère'a" id="ex-desc-btn"></a>
                 </div>
@@ -71,7 +78,7 @@
                     <h1>Szyfr Vernama</h1>
                 </div>
                 <div id="last-ex-desc">
-                    <p>Szyfr Vernama to szyfr strumieniowy, który generuje losowy klucz do zaszyfrowania tekstu jawnego. Jest bardzo bezpieczny i zapewnia doskonałą poufność, ale wymaga bezpiecznego generowania i przesyłania klucza oraz jest czasochłonny w procesie szyfrowania tekstu.</p>
+                    <p>Szyfr Vernama to szyfr strumieniowy, który generuje losowy klucz do zaszyfrowania tekstu jawnego. Jest bardzo bezpieczny i zapewnia doskonałą poufność, ale wymaga bezpiecznego generowania i przesyłania klucza oraz jest czasochłonny w procesie szyfrowania tekstu</p>
                 </div>
                 <a href="/podstorny/type4.html"><input type="button" value="Więcej informacji o szyfrze Vernama" id="last-ex-desc-btn"></a>
             </div>
@@ -85,7 +92,7 @@
                 <h1>Opis strony internetowej "Typy szyfrowań"</h1>
             </div>
             <div id="last-ex-desc">
-                <p>Strona została napisana przy użyciu 3 rożnych języków. Html, Css oraz Java Script. Aby pokazać przykłady szyfrowania w praktyce, stworzyłem szyfry w języku Java Script. Oraz używam go do wyświetlania ich na stronie. Java Script w stronach internetowych jest czymś w postaci silnika, który umożliwia tworzenie interaktywnych elementów. </p>
+                <p>Strona została napisana przy użyciu 3 rożnych języków. Html, Css oraz Java Script. Aby pokazać przykłady szyfrowania w praktyce, stworzyłem szyfry w języku Java Script. Oraz używam go do wyświetlania ich na stronie. Java Script w stronach internetowych jest czymś w postaci silnika, który umożliwia tworzenie interaktywnych elementów</p>
                 <div id="lng-btns">
                     <a target="_blank" href="https://www.w3schools.com/html/"><input type="button" value="Html" id="lng-btn"></a>
                     <a target="_blank" href="https://www.w3schools.com/css/"><input type="button" value="Css" id="lng-btn"></a>

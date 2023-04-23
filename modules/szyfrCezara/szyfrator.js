@@ -42,6 +42,14 @@ function cezar(s, k) { // s-tekst jawny, k-przesuniecie
 function displayS() {
   let przes = document.getElementById("przes").value;
   let inputV = document.getElementById('dane').value;
-  console.log(inputV, przes);
-  document.getElementById('wynik').innerHTML = cezar(inputV, przes);
+  if (przes < 0) {
+    przes = -przes;
+    console.log(inputV, przes , deszyfrujCezara(inputV, przes) ,"deszyfr");
+    document.getElementById('wynik').innerHTML = deszyfrujCezara(inputV, przes);
+  } else {
+    console.log(inputV, przes, cezar(inputV, przes), " szyfr");
+    document.getElementById('wynik').innerHTML = cezar(inputV, przes);
+  }
+  
+  
   }

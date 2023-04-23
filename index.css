@@ -7,6 +7,11 @@ p{
     font-size: larger;
 }
 
+#siteDescription-list{
+    width: 70%;
+    margin-left: 15%;
+    text-align: left;
+}
 #explanation{
     margin-top: -70px;
     place-items: center;
@@ -42,6 +47,18 @@ p{
 }
 
 #code-cpp{
+    margin-left: 19%;
+    height: 80%;
+    width: 60%;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    display: flex;
+    background-color: rgb(31, 31, 31);
+    border: aqua 6px solid;
+}
+
+#code-cpp-Cez{
     margin-left: 24%;
     height: 80%;
     width: 50%;
@@ -52,6 +69,7 @@ p{
     background-color: rgb(31, 31, 31);
     border: aqua 6px solid;
 }
+
 
 #code-cpp-Ver{
     margin-left: 9%;
@@ -66,7 +84,7 @@ p{
 }
 
 #code-cppS{
-    
+    margin-left: 3%;
     height: 100%;
     width: 60%;
     justify-content: center;

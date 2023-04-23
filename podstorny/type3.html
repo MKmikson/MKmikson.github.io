@@ -63,31 +63,38 @@
 #include string
 using namespace std;
 
-string szyfrujCezarem(string wiadomosc, int klucz) {
-    string wynik = "";
+string szyfrujVigenerea(string wiadomosc, string klucz) {
+    string szyfr;
+    int kluczIndex = 0;
     for (int i = 0; i < wiadomosc.length(); i++) {
-        char c = wiadomosc[i];
-        if (isalpha(c)) {
-            c = toupper(c);
-            c = (((c - 65) + klucz) % 26) + 65;
+        char c = toupper(wiadomosc[i]);
+        if (c >= 'A' && c <= 'Z') {
+            char kluczChar = toupper(klucz[kluczIndex % klucz.length()]);
+            int kluczOffset = kluczChar - 'A';
+            char szyfrChar = ((c - 'A' + kluczOffset) % 26) + 'A';
+            szyfr += szyfrChar;
+            kluczIndex++;
         }
-        wynik += c;
     }
-    return wynik;
+    return szyfr;
 }
                         </pre>
                         <pre id="code-cppD">
-string deszyfrujCezarem(string wiadomosc, int klucz) {
-    string wynik = "";
-    for (int i = 0; i < wiadomosc.length(); i++) {
-        char c = wiadomosc[i];
-        if (isalpha(c)) {
-            c = toupper(c);
-            c = (((c - 65) - klucz + 26) % 26) + 65;
+string deszyfrujVigenerea(string szyfr, string klucz) {
+    string wiadomosc;
+    int kluczIndex = 0;
+    for (int i = 0; i < szyfr.length(); i++) {
+        char c = toupper(szyfr[i]);
+        if (c >= 'A' && c <= 'Z') {
+            char kluczChar = toupper(klucz[kluczIndex % klucz.length()]);
+            int kluczOffset = kluczChar - 'A';
+            char wiadomoscChar = ((c - 'A' - kluczOffset + 26) % 26) + 'A';
+            wiadomosc += wiadomoscChar;
+            kluczIndex++;
         }
-        wynik += c;
     }
-    return wynik;
+    return wiadomosc;
+}eturn wynik;
 }
 </pre>
                 </div>
