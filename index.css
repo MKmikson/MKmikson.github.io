@@ -8,6 +8,10 @@ p{
 }
 
 
+.inputs{
+    border-radius: 3px;
+}
+
 #siteDescription-list{
     width: 70%;
     margin-left: 15%;
@@ -189,11 +193,13 @@ p{
 }
 
 #lng-btns{
+   
     display: flex;
     justify-content: space-evenly;
 }
 
 #lng-btn{
+    border: 0px;
     cursor: pointer;
     width: 100px;
     height: 45px;
@@ -203,8 +209,11 @@ p{
     background-color: rgb(11,40,71);
 }
 #lng-btn:hover{
-    background-color: rgb(16, 52, 92);
+    background-color: rgb(18, 64, 116);
+    transition: 0.8s ease;
 }
+
+
 
 #website-desc{
     border-radius: 10px;
@@ -255,6 +264,7 @@ p{
 }
 
 #wikiTransfer{
+    border: 0px;
     cursor: pointer;
     height: 45px;
     border-radius: 30px;
@@ -263,7 +273,8 @@ p{
     background-color: rgb(11,40,71);
 }
 #wikiTransfer:hover{
-    background-color: rgb(16, 52, 92);
+    background-color: rgb(18, 64, 116);
+    transition: 0.8s ease;
 }
 
 #example-input{
@@ -286,6 +297,7 @@ p{
 }
 
 #hash-btn{
+    border: 0px;
     height: 45px;
     border-radius: 30px;
     font-size: large;
@@ -293,7 +305,8 @@ p{
     background-color: rgb(11,40,71);
 }
 #hash-btn:hover{
-    background-color: rgb(16, 52, 92);
+    background-color: rgb(18, 64, 116);
+    transition: 0.8s ease;
 }
 
 #example-output-h{
@@ -358,6 +371,7 @@ p{
 }
 
 #ex-desc-btn{
+    border: 0px;
     cursor: pointer;
     font-size: large;
     margin-left: 10%;
@@ -370,7 +384,8 @@ p{
     color: white;
 }
 #ex-desc-btn:hover{
-    background-color: rgb(16, 52, 92);
+    background-color: rgb(18, 64, 116);
+    transition: 0.8s ease;
 }
 
 #lastEx{
@@ -417,6 +432,7 @@ p{
 }
 
 #last-ex-desc-btn{
+    border: 0px;
     cursor: pointer;
     font-size: large;
     margin-left: 35%;
@@ -429,7 +445,8 @@ p{
     color: white;
 }
 #last-ex-desc-btn:hover{
-    background-color: rgb(16, 52, 92);
+    background-color: rgb(18, 64, 116);
+    transition: 0.8s ease;
 }
 
 #footer{
