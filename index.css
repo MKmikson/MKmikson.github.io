@@ -262,7 +262,7 @@ p{
 }
 
 #separator2{
-    margin-top: 121vh;
+    margin-top: 106vh;
     width: 100vw;
     height: 2px;
     background: rgb(3, 0, 67);
@@ -378,9 +378,10 @@ p{
     justify-content: space-evenly;
     display: flex;
     flex-direction: row;
-    height:105vh;
-    width:100vw;
+    height:90vh;
+    width:90vw;
     float: left;
+    margin-left: 5vw;
 }
 
 #ex{
@@ -450,11 +451,11 @@ p{
     border-radius: 10px;
     margin-top: -5%;
     border: solid 2px black;
-    margin-left: 5vw;
-    margin-right: 5%;
+    margin-left: 9.4vw;
+    /* margin-right: 5%; */
     margin-bottom: 5%;
     height: 25vh;
-    width:90vw;
+    width:80.9vw;
     float: left;
     background-color: rgb(255, 255, 255);
 }
@@ -463,7 +464,7 @@ p{
     border-radius: 3px;
     text-align: center;
     margin-top: -22px; 
-    width: 90vw;
+    width: 80.9vw;
     height: 50px;
     background-color: rgb(98,60,210);
 }
