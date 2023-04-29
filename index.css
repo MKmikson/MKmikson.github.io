@@ -144,7 +144,9 @@ p{
 }
 
 #menu{
-
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 80px;
     background-color: #ffffff;
@@ -229,6 +231,9 @@ p{
 }
 
 #separator{
+    position: fixed;
+    top: 80px;
+    left: 0;
     width: 100vw;
     height: 2px;
     background: rgb(3, 0, 67);
@@ -236,7 +241,7 @@ p{
 }
 
 #separator2{
-    margin-top: 130vh;
+    margin-top: 121vh;
     width: 100vw;
     height: 2px;
     background: rgb(3, 0, 67);
@@ -244,16 +249,22 @@ p{
 }
 
 #content{
+ 
     justify-content: space-evenly;
     place-items: center;
     display:contents;
-    width: 100%;
-    height: 110%;
+    width: 100vw;
+    height: 110vh;
     background-color: rgb(255, 255, 255);
 
 }
 
+#siteDescription-title{
+    margin-top: 15vh;
+}
+
 #siteDescription{
+    
     width: 100vw;
     margin-top: 4vh;
     text-align: center;
@@ -340,11 +351,12 @@ p{
 }
 
 #hashEx{
+    margin-top: -5vh;
     place-items: center;
     justify-content: space-evenly;
     display: flex;
     flex-direction: row;
-    height: 55vw;
+    height:105vh;
     width:100vw;
     float: left;
 }
