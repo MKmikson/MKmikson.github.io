@@ -18,11 +18,11 @@
                 </div>
                     <!-- elementy menu -->
                 <div id="siteNav">
-                    <a href="./index.html" id="siteEl"><div>Strona Główna</div></a>
-                    <a href="./podstorny/szyfrCezara.html" id="siteEl"><div >Szyfr Cezara</div></a>
-                    <a href="./podstorny/szyfrPolibiusza.html" id="siteEl"><div >Szyfr Polibiusza</div></a>
-                    <a href="./podstorny/szyfrVigenera.html" id="siteEl"><div >Szyfr Vigenère'a</div></a>
-                    <a href="./podstorny/szyfrVernama.html" id="siteEl"><div >Szyfr Vernama</div></a>
+                    <a href="./index.html" id="siteEl"><img id="mainMenuImage" src="/images/ikonaStronaGłowna.png"> <div>Strona Główna</div></a>
+                    <a href="./podstorny/szyfrCezara.html" id="siteEl"><img class="menuImage" src="/images/ikona szyfru janso niebieska.jpg"><div >Szyfr Cezara</div></a>
+                    <a href="./podstorny/szyfrPolibiusza.html" id="siteEl"><img class="menuImage" src="/images/ikona szyfru niebieska.jpg"><div >Szyfr Polibiusza</div></a>
+                    <a href="./podstorny/szyfrVigenera.html" id="siteEl"><img class="menuImage" src="/images/ikona szyfru fioletowa.jpg"><div >Szyfr Vigenère'a</div></a>
+                    <a href="./podstorny/szyfrVernama.html" id="siteEl"><img class="menuImage" src="/images/ikona szyfru rozowa.jpg"><div >Szyfr Vernama</div></a>
                 </div>            
                 <!-- <div class="siteNav">
                     <ul class="navbar-list">
@@ -48,12 +48,12 @@
                     <li><p>Szyfry blokowe - operują na blokach danych o stałej długości. Każdy blok jest szyfrowany z użyciem klucza, a następnie łączony z kolejnym blokiem</p></li>
                 </ul>
                 <p>Szyfrowanie jest szeroko stosowane w celu zabezpieczenia danych przed dostępem osób nieuprawnionych,<br> na przykład podczas przesyłania poufnych informacji przez internet, czy też w systemach bankowych</p>
-                <input  id="wikiTransfer" type="button"  value="Więcej informacji na temat szyfrów" onclick="window.location=('https://opensecurity.pl/szyfrowanie-kodowanie-hashowanie/')" />
+                <a target="_blank" href="https://opensecurity.pl/szyfrowanie-kodowanie-hashowanie/"><input  id="wikiTransfer" type="button"  value="Więcej informacji na temat szyfrów"  /></a>
             </div>
                 <!-- przyklady szyfrów -->
             <div id="hashEx">
                 <div id="ex">
-                    <div id="ex-title">
+                    <div id="ex-titleC">
                         <h1>Szyfr Cezara</h1>
                     </div>
                     <div id="ex-desc">
@@ -64,7 +64,7 @@
                     <a href="/podstorny/szyfrCezara.html"><input type="button" value="Więcej informacji o szyfrze Cezara" id="ex-desc-btn"></a>
                 </div>
                 <div id="ex">
-                    <div id="ex-title">
+                    <div id="ex-titleP">
                         <h1>Szyfr Polibiusza</h1>
                     </div>
                     <div id="ex-desc">
@@ -73,7 +73,7 @@
                     <a href="/podstorny/szyfrPolibiusza.html"><input type="button" value="Więcej informacji o szyfrze Polibiusza" id="ex-desc-btn"></a>
                 </div>
                 <div id="ex">
-                    <div id="ex-title">
+                    <div id="ex-titleV">
                         <h1>Szyfr Vigenère'a</h1>
                     </div>
                     <div id="ex-desc">
