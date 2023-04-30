@@ -177,7 +177,7 @@ li{
     top: 0;
     left: 0;
     width: 100vw;
-    height: 80px;
+    height: 8vh;
     background-color: #ffffff;
 }
 
@@ -222,7 +222,7 @@ li{
     height: 100%;
     place-items: center;
     display: flex;
-    width: 150px;
+    width: 8vh;
 }
 
 #lng-btns{
@@ -261,7 +261,7 @@ li{
 
 #separator{
     position: fixed;
-    top: 80px;
+    top: 8vh;
     left: 0;
     width: 100vw;
     height: 2px;
