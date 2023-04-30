@@ -51,3 +51,15 @@ function szyfrujVigenere(tekstJawny, klucz) {
     return tekstJawny; // zwracamy tekst odszyfrowany szyfrem Vigenère'a
   }
   
+
+function displayS() {
+  let wiadomosc = document.getElementById('dane').value;
+  var klucz = document.getElementById('przes').value;
+  if (klucz[0] == "-") {
+    klucz = klucz.substr(1);
+    console.log(klucz);
+    document.getElementById('wynik').innerHTML = deszyfrujVigenere(wiadomosc, klucz);
+  } else {
+    document.getElementById('wynik').innerHTML = szyfrujVigenere(wiadomosc, klucz);
+  }
+}

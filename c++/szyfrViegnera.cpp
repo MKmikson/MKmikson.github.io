@@ -1,50 +1,64 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 using namespace std;
 
-// Szyfrator Vigenere'a
-string szyfrujVigenerea(string wiadomosc, string klucz) {
-    string szyfr;
-    int kluczIndex = 0;
-    for (int i = 0; i < wiadomosc.length(); i++) {
-        char c = toupper(wiadomosc[i]);
-        if (c >= 'A' && c <= 'Z') {
-            char kluczChar = toupper(klucz[kluczIndex % klucz.length()]);
-            int kluczOffset = kluczChar - 'A';
-            char szyfrChar = ((c - 'A' + kluczOffset) % 26) + 'A';
-            szyfr += szyfrChar;
-            kluczIndex++;
+string szyfrujSzyfrVigenere(string tekst, string klucz) {
+    string zaszyfrowanyTekst = "";
+    int dlugoscKlucza = klucz.length();
+    for (int i = 0; i < tekst.length(); i++) {
+        char litera = tolower(tekst[i]);
+        if (litera >= 'a' && litera <= 'z') {
+            int przesuniecie = klucz[i % dlugoscKlucza] - 'a';
+            char zaszyfrowanaLitera = 'a' + (litera - 'a' + przesuniecie) % 26;
+            zaszyfrowanyTekst += zaszyfrowanaLitera;
+        }
+        else {
+            zaszyfrowanyTekst += litera;
         }
     }
-    return szyfr;
+    return zaszyfrowanyTekst;
 }
 
-// Deszyfrator Vigenere'a
-string deszyfrujVigenerea(string szyfr, string klucz) {
-    string wiadomosc;
-    int kluczIndex = 0;
-    for (int i = 0; i < szyfr.length(); i++) {
-        char c = toupper(szyfr[i]);
-        if (c >= 'A' && c <= 'Z') {
-            char kluczChar = toupper(klucz[kluczIndex % klucz.length()]);
-            int kluczOffset = kluczChar - 'A';
-            char wiadomoscChar = ((c - 'A' - kluczOffset + 26) % 26) + 'A';
-            wiadomosc += wiadomoscChar;
-            kluczIndex++;
+string deszyfrujSzyfrVigenere(string zaszyfrowanyTekst, string klucz) {
+    string odszyfrowanyTekst = "";
+    int dlugoscKlucza = klucz.length();
+    for (int i = 0; i < zaszyfrowanyTekst.length(); i++) {
+        char litera = tolower(zaszyfrowanyTekst[i]);
+        if (litera >= 'a' && litera <= 'z') {
+            int przesuniecie = klucz[i % dlugoscKlucza] - 'a';
+            char odszyfrowanaLitera = 'a' + (litera - 'a' - przesuniecie + 26) % 26;
+            odszyfrowanyTekst += odszyfrowanaLitera;
+        }
+        else {
+            odszyfrowanyTekst += litera;
         }
     }
-    return wiadomosc;
+    return odszyfrowanyTekst;
 }
 
-// Przykład użycia
 int main() {
-    string wiadomosc = "JASNOZIELONY";
-    string klucz = "KOD";
-    string szyfr = szyfrujVigenerea(wiadomosc, klucz);
-    string odszyfrowane = deszyfrujVigenerea(szyfr, klucz);
-    cout << "Wiadomość: " << wiadomosc << endl;
-    cout << "Klucz: " << klucz << endl;
-    cout << "Szyfr: " << szyfr << endl;
-    cout << "Odszyfrowane: " << odszyfrowane << endl;
+    ifstream plikWe("tekst.txt");
+    ofstream wynik("./wynik.txt");
+    string tekst;
+    if (plikWe.is_open()) {
+        getline(plikWe, tekst);
+        plikWe.close();
+    }
+    else {
+        cout << "Nie udalo sie otworzyc pliku tekst.txt.";
+        return 0;
+    }
+
+    string klucz;
+    cout << "Podaj klucz: ";
+    getline(cin, klucz);
+
+    string zaszyfrowanyTekst = szyfrujSzyfrVigenere(tekst, klucz);
+    wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
+
+    string odszyfrowanyTekst = deszyfrujSzyfrVigenere(zaszyfrowanyTekst, klucz);
+    wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+    wynik.close();
     return 0;
 }

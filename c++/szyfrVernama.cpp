@@ -18,6 +18,7 @@ string szyfrujVernama(string wiadomosc, string klucz) {
                         
 // funkcja generująca losowy klucz o podanej długości
 string generujKlucz(int dlugosc) {
+    
     string klucz = "";
     // generator liczb losowych
     default_random_engine generator(time(0));
@@ -31,14 +32,20 @@ string generujKlucz(int dlugosc) {
 }
 
 int main() {
-    string wiadomosc = "Tajna wiadomość";
-    string klucz = generujKlucz(wiadomosc.length()); 
+    ifstream plikWe("tekst.txt");
+    ofstream wynik("./wynik.txt");
+    string wiadomosc = "";
+
+    getline(plikWe, wiadomosc);
+    plikWe.close();
+    string klucz = generujKlucz(wiadomosc.length());
     cout << "Wiadomość: " << wiadomosc << endl;
     cout << "Klucz: " << klucz << endl;
     string szyfrogram = szyfrujVernama(wiadomosc, klucz); 
-    cout << "Zaszyfrowana wiadomość: " << szyfrogram << endl;
+    wynik << "Zaszyfrowana wiadomość: " << szyfrogram << endl;
     string odszyfrowanaWiadomosc = szyfrujVernama(szyfrogram, klucz);
-    cout << "Odszyfrowana wiadomość: " << odszyfrowanaWiadomosc << endl;
+    wynik << "Odszyfrowana wiadomość: " << odszyfrowanaWiadomosc << endl;
+    wynik.close();
     return 0;
 }
     

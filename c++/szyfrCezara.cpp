@@ -1,41 +1,56 @@
-#include iostream
-#include string
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
-string szyfrujCezarem(string wiadomosc, int klucz) {
-    string wynik = "";
-    for (int i = 0; i < wiadomosc.length(); i++) {
-        char c = wiadomosc[i];
-        if (isalpha(c)) {
-            c = toupper(c);
-            c = (((c - 65) + klucz) % 26) + 65;
+string szyfrujSzyfrCezara(string tekst, int przesuniecie) {
+    string zaszyfrowanyTekst = "";
+    for (int i = 0; i < tekst.length(); i++) {
+        if (isupper(tekst[i])) {
+            zaszyfrowanyTekst += char(int(tekst[i] + przesuniecie - 65) % 26 + 65);
         }
-        wynik += c;
-    }
-    return wynik;
-}
-                        
-string deszyfrujCezarem(string wiadomosc, int klucz) {
-    string wynik = "";
-    for (int i = 0; i < wiadomosc.length(); i++) {
-        char c = wiadomosc[i];
-        if (isalpha(c)) {
-            c = toupper(c);
-            c = (((c - 65) - klucz + 26) % 26) + 65;
+        else {
+            zaszyfrowanyTekst += char(int(tekst[i] + przesuniecie - 97) % 26 + 97);
         }
-        wynik += c;
     }
-    return wynik;
+    return zaszyfrowanyTekst;
 }
 
-int main(){
-    string wiadomosc = "Tajna wiadomość";
-    string klucz = generujKlucz(wiadomosc.length()); 
-    cout << "Wiadomość: " << wiadomosc << endl;
-    cout << "Klucz: " << klucz << endl;
-    string szyfrogram = szyfrujVernama(wiadomosc, klucz); 
-    cout << "Zaszyfrowana wiadomość: " << szyfrogram << endl;
-    string odszyfrowanaWiadomosc = szyfrujVernama(szyfrogram, klucz);
-    cout << "Odszyfrowana wiadomość: " << odszyfrowanaWiadomosc << endl;
+string deszyfrujSzyfrCezara(string zaszyfrowanyTekst, int przesuniecie) {
+    string odszyfrowanyTekst = "";
+    for (int i = 0; i < zaszyfrowanyTekst.length(); i++) {
+        if (isupper(zaszyfrowanyTekst[i])) {
+            odszyfrowanyTekst += char(int(zaszyfrowanyTekst[i] - przesuniecie - 65 + 26) % 26 + 65);
+        }
+        else {
+            odszyfrowanyTekst += char(int(zaszyfrowanyTekst[i] - przesuniecie - 97 + 26) % 26 + 97);
+        }
+    }
+    return odszyfrowanyTekst;
+}
+
+int main() {
+    ifstream plikWe("./tekst.txt");
+    ofstream wynik("./wynik.txt");
+    string tekst;
+    if (plikWe.is_open()) {
+        getline(plikWe, tekst);
+        plikWe.close();
+    }
+    else {
+        cout << "Nie udalo sie otworzyc pliku tekst.txt.";
+        return 0;
+    }
+
+    int przesuniecie;
+    cout << "Podaj przesuniecie: ";
+    cin >> przesuniecie;
+
+    string zaszyfrowanyTekst = szyfrujSzyfrCezara(tekst, przesuniecie);
+    wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
+
+    string odszyfrowanyTekst = deszyfrujSzyfrCezara(zaszyfrowanyTekst, przesuniecie);
+    wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+    wynik.close();
     return 0;
 }

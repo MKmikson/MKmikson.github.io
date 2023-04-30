@@ -1,59 +1,59 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 using namespace std;
 
-// Szyfrator Polibiusza
-string szyfrujPolibiusza(string wiadomosc) {
-    string szyfr;
-    char tabela[5][5] = {
-        {'A', 'B', 'C', 'D', 'E'},
-        {'F', 'G', 'H', 'I', 'K'},
-        {'L', 'M', 'N', 'O', 'P'},
-        {'Q', 'R', 'S', 'T', 'U'},
-        {'V', 'W', 'X', 'Y', 'Z'}
-    };
-    for (int i = 0; i < wiadomosc.length(); i++) {
-        char c = toupper(wiadomosc[i]);
-        if (c >= 'A' && c <= 'Z') {
-            for (int row = 0; row < 5; row++) {
-                for (int col = 0; col < 5; col++) {
-                    if (tabela[row][col] == c) {
-                        szyfr += to_string(row+1) + to_string(col+1);
-                    }
-                }
-            }
+string szyfrujSzyfrPolibiusza(string tekst) {
+    string zaszyfrowanyTekst = "";
+    for (int i = 0; i < tekst.length(); i++) {
+        char litera = tolower(tekst[i]);
+        if (litera == ' ') {
+            zaszyfrowanyTekst += ' ';
+        }
+        else if (litera >= 'a' && litera <= 'z') {
+            int wiersz = (litera - 'a') / 5 + 1;
+            int kolumna = (litera - 'a') % 5 + 1;
+            zaszyfrowanyTekst += to_string(wiersz) + to_string(kolumna);
         }
     }
-    return szyfr;
+    return zaszyfrowanyTekst;
 }
 
-// Deszyfrator Polibiusza
-string deszyfrujPolibiusza(string szyfr) {
-    string wiadomosc;
-    char tabela[5][5] = {
-        {'A', 'B', 'C', 'D', 'E'},
-        {'F', 'G', 'H', 'I', 'K'},
-        {'L', 'M', 'N', 'O', 'P'},
-        {'Q', 'R', 'S', 'T', 'U'},
-        {'V', 'W', 'X', 'Y', 'Z'}
-    };
-    for (int i = 0; i < szyfr.length(); i += 2) {
-        int row = szyfr[i] - '0' - 1;
-        int col = szyfr[i+1] - '0' - 1;
-        if (row >= 0 && row < 5 && col >= 0 && col < 5) {
-            wiadomosc += tabela[row][col];
+string deszyfrujSzyfrPolibiusza(string zaszyfrowanyTekst) {
+    string odszyfrowanyTekst = "";
+    for (int i = 0; i < zaszyfrowanyTekst.length(); i += 2) {
+        if (zaszyfrowanyTekst[i] == ' ') {
+            odszyfrowanyTekst += ' ';
+            i--;
+        }
+        else {
+            int wiersz = zaszyfrowanyTekst[i] - '0';
+            int kolumna = zaszyfrowanyTekst[i+1] - '0';
+            char litera = 'a' + (wiersz - 1) * 5 + kolumna - 1;
+            odszyfrowanyTekst += litera;
         }
     }
-    return wiadomosc;
+    return odszyfrowanyTekst;
 }
 
-// Przykład użycia
 int main() {
-    string wiadomosc = "JASNOZIELONY";
-    string szyfr = szyfrujPolibiusza(wiadomosc);
-    string odszyfrowane = deszyfrujPolibiusza(szyfr);
-    cout << "Wiadomość: " << wiadomosc << endl;
-    cout << "Szyfr: " << szyfr << endl;
-    cout << "Odszyfrowane: " << odszyfrowane << endl;
+    ifstream plikWe("./tekst.txt");
+    ofstream wynik("./wynik.txt");
+    string tekst;
+    if (plikWe.is_open()) {
+        getline(plikWe, tekst);
+        plikWe.close();
+    }
+    else {
+        cout << "Nie udalo sie otworzyc pliku tekst.txt.";
+        return 0;
+    }
+
+    string zaszyfrowanyTekst = szyfrujSzyfrPolibiusza(tekst);
+    wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
+
+    string odszyfrowanyTekst = deszyfrujSzyfrPolibiusza(zaszyfrowanyTekst);
+    wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+    wynik.close();
     return 0;
 }
