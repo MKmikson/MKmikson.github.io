@@ -3,10 +3,18 @@ body{
     font-family: 'Mukta', sans-serif;
 }
 
-p{
-    font-size: larger;
+pre{
+    font-size: 1.3vh;
 }
 
+p{
+    font-size: 2.5vh;
+    color:blueviolet;
+}
+li{
+    font-size: 2.2vh;
+    color:rgb(43, 226, 58);
+}
 
 .inputs{
     border-radius: 3px;
@@ -422,7 +430,7 @@ p{
 
 #ex-desc{
     align-items: center;
-    font-size: x-large;
+
     margin-left: 5%;
     width: 90%;
     height: 70%;
