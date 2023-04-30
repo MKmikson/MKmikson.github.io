@@ -2,18 +2,24 @@ body{
     
     font-family: 'Mukta', sans-serif;
 }
+/* 
+h1{
+
+}
+
+h1  */
 
 pre{
-    font-size: 1.3vh;
+    font-size: 0.65vw;
 }
 
 p{
     font-size: 2.5vh;
-    color:blueviolet;
+    /* color:blueviolet; */
 }
 li{
     font-size: 2.2vh;
-    color:rgb(43, 226, 58);
+    /* color:rgb(43, 226, 58); */
 }
 
 .inputs{
@@ -484,7 +490,7 @@ li{
     margin-top: -22px; 
     width: 100%;
     height: 50px;
-    background-color: rgb(74,44,197);
+    background-color: rgb(49, 14, 153);
 }
 
 
