@@ -509,8 +509,7 @@ li{
     border: 0px;
     cursor: pointer;
     font-size: large;
-    
-    /* padding-left: 35%; */
+    margin-left: 35%;
     text-align: center;
     width: 30%;
     height: 45px;
