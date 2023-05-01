@@ -55,12 +55,12 @@ li{
     margin-left: 1vw;
     color: #ffffff;
     border-radius: 5%;
-    background-color: blue;
+    background-color:  rgb(30, 93, 211);
     border: 0px;
 }
 #cppD-btn:hover{
     border: 0px;
-    background-color: rgb(42, 111, 239);
+    background-color:blue;
     transition: 1s ease;
 }
 
