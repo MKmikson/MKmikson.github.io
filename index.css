@@ -231,12 +231,12 @@ li{
 }
 
 #logo{
-    align-items: center;
+    /* align-items: center; */
 
-    /* display: flex;
-    place-items: center; */
+    display: flex;
+    place-items: center;
     margin-left: 5%;
-    margin-top: -2vh;
+    /* margin-top: -2vh; */
     width:35%;
     height: 100%;
     float: left;
