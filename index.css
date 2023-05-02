@@ -281,6 +281,7 @@ li{
 }
 
 #lng-btn{
+    margin-bottom: 2vh;
     border: 0px;
     cursor: pointer;
     width: 100px;
@@ -304,7 +305,7 @@ li{
     margin-top: 4vh;
     margin-bottom: 4vh;
     /* background-color: black; */
-    height: 30vh;
+    /* height: 30vh; */
     width: 50vw;
     border: black 2px solid;
 }
@@ -334,6 +335,7 @@ li{
     place-items: center;
     display:contents; */
     width: 100vw;
+    margin-bottom: 4vh;
     /* height: 110vh; */
     /* background-color: rgb(255, 255, 255); */
     /* background-color: black; */
@@ -517,7 +519,7 @@ li{
     border: solid 2px black;
     margin-left: 9.4vw;
     /* margin-right: 5%; */
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
     /* height: 25vh; */
     width:80.9vw;
     float: left;
@@ -562,7 +564,7 @@ li{
     text-align: center;
     /* width: 30%; */
     height: 45px;
-    
+    margin-bottom: 2vh;
     border-radius: 30px;
     background-color: rgb(11,40,71);
     color: white;
