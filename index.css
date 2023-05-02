@@ -215,7 +215,7 @@ li{
 
     margin-top: -9px;
     margin-left: -8px;
-    width: 1920px;
+    /* width: 1920px; */
     /* height: 1000px; */
     /* background-color: rgb(255, 255, 255); */
 
@@ -320,7 +320,7 @@ li{
 }
 
 #separator2{
-    margin-top: 84.5vh;
+    /* margin-top: 84.5vh; */
     width: 100vw;
     height: 2px;
     background: rgb(3, 0, 67);
@@ -334,8 +334,9 @@ li{
     place-items: center;
     display:contents; */
     width: 100vw;
-    height: 110vh;
+    /* height: 110vh; */
     /* background-color: rgb(255, 255, 255); */
+    /* background-color: black; */
 
 }
 
@@ -438,17 +439,18 @@ li{
     justify-content: space-evenly;
     display: flex;
     flex-direction: row;
-    height:70vh;
+    /* height:70vh; */
     width:90vw;
     float: left;
     margin-left: 5vw;
+    
 }
 
 #ex{
     border-radius: 10px;
     border: solid 2px black;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     /* height: 60%; */
     width:40%;
     float: left;
@@ -493,11 +495,13 @@ li{
     border: 0px;
     cursor: pointer;
     font-size: large;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     text-align: center;
-    width: 80%;
+    /* width: 80%; */
     height: 45px;
-    /* margin-top: 15px; */
+    margin-bottom: 2vh;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     border-radius: 30px;
     background-color: rgb(11,40,71);
     color: white;
@@ -514,7 +518,7 @@ li{
     margin-left: 9.4vw;
     /* margin-right: 5%; */
     margin-bottom: 5%;
-    height: 25vh;
+    /* height: 25vh; */
     width:80.9vw;
     float: left;
     background-color: rgb(255, 255, 255);
@@ -556,7 +560,7 @@ li{
     font-size: large;
     margin-left: 35%;
     text-align: center;
-    width: 30%;
+    /* width: 30%; */
     height: 45px;
     
     border-radius: 30px;
