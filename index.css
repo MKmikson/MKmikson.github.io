@@ -216,7 +216,7 @@ li{
     margin-top: -9px;
     margin-left: -8px;
     width: 1920px;
-    height: 1000px;
+    /* height: 1000px; */
     /* background-color: rgb(255, 255, 255); */
 
 }
@@ -328,13 +328,14 @@ li{
 }
 
 #content{
- 
-    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly;
     place-items: center;
-    display:contents;
+    display:contents; */
     width: 100vw;
     height: 110vh;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 
 }
 
@@ -432,7 +433,7 @@ li{
 }
 
 #hashEx{
-    margin-top: -5vh;
+    margin-top: 5vh;
     place-items: center;
     justify-content: space-evenly;
     display: flex;
@@ -448,7 +449,7 @@ li{
     border: solid 2px black;
     margin-left: 5%;
     margin-right: 5%;
-    height: 60%;
+    /* height: 60%; */
     width:40%;
     float: left;
     background-color: rgb(255, 255, 255);
@@ -508,7 +509,7 @@ li{
 
 #lastEx{
     border-radius: 10px;
-    margin-top: -5%;
+    margin-top: 5vh; 
     border: solid 2px black;
     margin-left: 9.4vw;
     /* margin-right: 5%; */
