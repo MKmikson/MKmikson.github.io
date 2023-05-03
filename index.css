@@ -389,6 +389,7 @@ li{
     /* margin-left: 24vw; */
     width: 100%;
     justify-content: space-evenly;
+    row-gap: 10px;
 
 }
 #example-input-dane{
@@ -399,9 +400,7 @@ li{
 
 }
 
-#example-input-dane-h1{
-    
-}
+
 
 #example-input-key{
     height: 100%;
@@ -598,7 +597,7 @@ li{
 }
 
 #footer{
-    
+    margin-bottom: -2vh;
     color:white;
     display: flex;
     place-items: center;
