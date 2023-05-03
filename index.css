@@ -382,6 +382,7 @@ li{
 }
 
 #example-input{
+    align-content: space-between;
     place-items: center;
     display: flex;
     float: left;
@@ -390,6 +391,25 @@ li{
     justify-content: space-evenly;
 
 }
+#example-input-dane{
+    height: 100%;
+    /* margin-top: 2vh; */
+    margin-bottom: 2vh;
+    width: min-content;
+
+}
+
+#example-input-dane-h1{
+    
+}
+
+#example-input-key{
+    height: 100%;
+    /* margin-top: 2vh; */
+    margin-bottom: 2vh;
+
+}
+
 #example-output{
     background-color: #ffffff;
     place-items: center;
