@@ -36,7 +36,7 @@ li{
     bottom: 1.5vh;
     right: 0.8vw;
     height: 13vh;
-    width: 7vw;
+    width: 6.3vw;
     
 }
 
@@ -47,7 +47,7 @@ li{
 #cppBtnTitle{
     margin-top: -1.4vh;
     text-align: left;
-    margin-left: 0.7vw;
+    margin-left: 0.4vw;
     /* border: 0px; */
 }
 
@@ -55,7 +55,7 @@ li{
     margin-top: 1vh;
     height: 3vh;
     width: 5vw;
-    margin-left: 1vw;
+    margin-left: 0.62vw;
     color: #ffffff;
     border-radius: 5%;
     background-color:  rgb(30, 93, 211);
@@ -543,7 +543,7 @@ li{
     /* margin-right: 5%; */
     /* margin-bottom: 5%; */
     /* height: 25vh; */
-    width:85vw;
+    width:84.8vw;
     float: left;
     background-color: rgb(255, 255, 255);
 }
