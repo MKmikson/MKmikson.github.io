@@ -41,7 +41,14 @@ int main() {
     ofstream wynik("./wynik.txt");
     string tekst;
     if (plikWe.is_open()) {
-        getline(plikWe, tekst);
+        while(!plikWe.eof()) {
+            getline(plikWe, tekst);
+            string zaszyfrowanyTekst = szyfrujSzyfrPolibiusza(tekst);
+            wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
+
+            string odszyfrowanyTekst = deszyfrujSzyfrPolibiusza(zaszyfrowanyTekst);
+            wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+        }
         plikWe.close();
     }
     else {
@@ -49,11 +56,7 @@ int main() {
         return 0;
     }
 
-    string zaszyfrowanyTekst = szyfrujSzyfrPolibiusza(tekst);
-    wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
-
-    string odszyfrowanyTekst = deszyfrujSzyfrPolibiusza(zaszyfrowanyTekst);
-    wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+    
     wynik.close();
     return 0;
 }

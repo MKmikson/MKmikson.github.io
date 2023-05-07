@@ -1,8 +1,9 @@
-#include iostream
-#include string
-#include vector
-#include random
-#include ctime
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <random>
+#include <ctime>
 using namespace std;
                             
 // funkcja kodująca wiadomość przy użyciu klucza

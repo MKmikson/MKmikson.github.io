@@ -39,26 +39,23 @@ string deszyfrujSzyfrVigenere(string zaszyfrowanyTekst, string klucz) {
 
 int main() {
     ifstream plikWe("tekst.txt");
-    ofstream wynik("./wynik.txt");
+    ofstream wynik("wynik.txt");
     string tekst;
-    if (plikWe.is_open()) {
-        getline(plikWe, tekst);
-        plikWe.close();
-    }
-    else {
-        cout << "Nie udalo sie otworzyc pliku tekst.txt.";
-        return 0;
-    }
+
 
     string klucz;
     cout << "Podaj klucz: ";
-    getline(cin, klucz);
+    cin>>klucz;
+    while(!plikWe.eof()){
+        getline(plikWe, tekst);
+        string zaszyfrowanyTekst = szyfrujSzyfrVigenere(tekst, klucz);
+        wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
 
-    string zaszyfrowanyTekst = szyfrujSzyfrVigenere(tekst, klucz);
-    wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
+        odszyfrowanyTekst = deszyfrujSzyfrVigenere(zaszyfrowanyTekst, klucz);
+        wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+    }
 
-    string odszyfrowanyTekst = deszyfrujSzyfrVigenere(zaszyfrowanyTekst, klucz);
-    wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+    plikWe.close();
     wynik.close();
     return 0;
 }

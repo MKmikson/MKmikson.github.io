@@ -6,7 +6,11 @@ using namespace std;
 string szyfrujSzyfrCezara(string tekst, int przesuniecie) {
     string zaszyfrowanyTekst = "";
     for (int i = 0; i < tekst.length(); i++) {
-        if (isupper(tekst[i])) {
+        if(tekst[i]===' 'or  tekst[i]===','or tekst[i]==='.'ortekst[i]==='"'){
+            cout << "blank: --"<<tekst[i]<<endl;
+            zaszyfrowanyTekst += tekst[i];
+        }
+        else if(isupper(tekst[i])) {
             zaszyfrowanyTekst += char(int(tekst[i] + przesuniecie - 65) % 26 + 65);
         }
         else {
@@ -19,7 +23,10 @@ string szyfrujSzyfrCezara(string tekst, int przesuniecie) {
 string deszyfrujSzyfrCezara(string zaszyfrowanyTekst, int przesuniecie) {
     string odszyfrowanyTekst = "";
     for (int i = 0; i < zaszyfrowanyTekst.length(); i++) {
-        if (isupper(zaszyfrowanyTekst[i])) {
+        if(tekst[i]===' 'or tekst[i]===','or tekst[i]==='.'or tekst[i]==='"'){
+            odszyfrowanyTekst += tekst[i];
+        }
+        else if (isupper(zaszyfrowanyTekst[i])) {
             odszyfrowanyTekst += char(int(zaszyfrowanyTekst[i] - przesuniecie - 65 + 26) % 26 + 65);
         }
         else {
@@ -34,8 +41,8 @@ int main() {
     ofstream wynik("./wynik.txt");
     string tekst;
     if (plikWe.is_open()) {
-        getline(plikWe, tekst);
-        plikWe.close();
+
+
     }
     else {
         cout << "Nie udalo sie otworzyc pliku tekst.txt.";
@@ -45,12 +52,16 @@ int main() {
     int przesuniecie;
     cout << "Podaj przesuniecie: ";
     cin >> przesuniecie;
+    while(!plikWe.eof()){
 
+            getline(plikWe, tekst);
     string zaszyfrowanyTekst = szyfrujSzyfrCezara(tekst, przesuniecie);
     wynik << "Zaszyfrowany tekst: " << zaszyfrowanyTekst << endl;
 
     string odszyfrowanyTekst = deszyfrujSzyfrCezara(zaszyfrowanyTekst, przesuniecie);
     wynik << "Odszyfrowany tekst: " << odszyfrowanyTekst << endl;
+    }
+    plikWe.close();
     wynik.close();
     return 0;
 }
