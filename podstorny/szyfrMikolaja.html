@@ -65,8 +65,8 @@
                             const { randomInt } = require('crypto');
                             const fs = require('fs');
                             
-                            const lines = fs.readFileSync('./server/tekst.txt').toString().split('\r\n');
-                            const wynik = fs.WriteStream('./server/wynik.txt');
+                            const lines = fs.readFileSync('./tekst.txt').toString().split('\r\n');
+                            const wynik = fs.WriteStream('./wynik.txt');
                             
                             function keyGenerator(view_text) {
                               const bits = ["a", "b", "c", "d", "e", "f", "g",
@@ -109,7 +109,6 @@
   
                             for (let index in lines) {
                                 const line = lines[index];
-                                // console.log(line);
                                 const key = keyGenerator(line);
                                 const hashedText = hash(line, key);
                                 const decryptedText = decrypt(hashedText, key);
@@ -135,8 +134,8 @@
                             
                         </div>
                         <div id="example-input-key">
-                            <h1>Przesuniecie</h1>
-                            <input class="inputs" id="przes" type="number" placeholder="np. -2, 4, 6"></input>
+                            <h1>Klucz</h1>
+                            <input class="inputs" id="przes" type="text" placeholder="Generowane automatycznie"></input>
                             
                         </div>
                         <div>
@@ -169,6 +168,6 @@
         
         <div id="footer"> <p id="footer-p">Mikołaj Ronczewski &copy</p> </div>
     </div>
-    <script src="../modules/szyfrCezara/szyfrator.js" ></script>
+    <script src="../modules/szyfrMikolaja/szyfrMikolaja.js" ></script>
 </body>
 </html>
