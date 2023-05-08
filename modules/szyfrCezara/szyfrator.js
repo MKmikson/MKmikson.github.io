@@ -1,44 +1,78 @@
-function szyfrujSzyfrCezara(tekst, przesuniecie) {
-  let zaszyfrowanyTekst = "";
+function zaszyfrujTekst(tekst, przesuniecie) {
+  let zaszyfrowanyTekst = '';
+  tekst = tekst.toLowerCase();
   for (let i = 0; i < tekst.length; i++) {
     let kodZnaku = tekst.charCodeAt(i);
-    if (kodZnaku >= 65 && kodZnaku <= 90) {
-      zaszyfrowanyTekst += String.fromCharCode(((kodZnaku - 65 + przesuniecie) % 26) + 65);
-    } else if (kodZnaku >= 97 && kodZnaku <= 122) {
-      zaszyfrowanyTekst += String.fromCharCode(((kodZnaku - 97 + przesuniecie) % 26) + 97);
-    } else {
-      zaszyfrowanyTekst += tekst.charAt(i);
+    let przesunietyKodZnaku = kodZnaku + przesuniecie;
+    
+    if (tekst[i] === ' ') {
+      zaszyfrowanyTekst += ' ';
+      continue;
     }
+    
+    if (tekst[i] === 'ó') {
+      przesunietyKodZnaku -= 32;
+    }
+    
+    if (przesunietyKodZnaku > 122) {
+      przesunietyKodZnaku -= 26;
+    }
+    
+    let zaszyfrowanyZnak = String.fromCharCode(przesunietyKodZnaku);
+    zaszyfrowanyTekst += zaszyfrowanyZnak;
   }
+  
   return zaszyfrowanyTekst;
 }
-function deszyfrujSzyfrCezara(zaszyfrowanyTekst, przesuniecie) {
-  let odszyfrowanyTekst = "";
-  for (let i = 0; i < zaszyfrowanyTekst.length; i++) {
-    let kodZnaku = zaszyfrowanyTekst.charCodeAt(i);
-    if (kodZnaku >= 65 && kodZnaku <= 90) {
-      odszyfrowanyTekst += String.fromCharCode(((kodZnaku - 65 - przesuniecie + 26) % 26) + 65);
-    } else if (kodZnaku >= 97 && kodZnaku <= 122) {
-      odszyfrowanyTekst += String.fromCharCode(((kodZnaku - 97 - przesuniecie + 26) % 26) + 97);
-    } else {
-      odszyfrowanyTekst += zaszyfrowanyTekst.charAt(i);
+
+function odszyfrujTekst(tekst, przesuniecie) {
+  let odszyfrowanyTekst = '';
+  tekst = tekst.toLowerCase();
+  for (let i = 0; i < tekst.length; i++) {
+    let kodZnaku = tekst.charCodeAt(i);
+    let przesunietyKodZnaku = kodZnaku - przesuniecie;
+    
+    if (tekst[i] === ' ') {
+      odszyfrowanyTekst += ' ';
+      continue;
     }
+    
+    if (tekst[i] === 'ó') {
+      przesunietyKodZnaku += 32;
+    }
+    
+    if (przesunietyKodZnaku < 97) {
+      przesunietyKodZnaku += 26;
+    }
+    
+    let odszyfrowanyZnak = String.fromCharCode(przesunietyKodZnaku);
+    odszyfrowanyTekst += odszyfrowanyZnak;
   }
+  
   return odszyfrowanyTekst;
 }
 
+// Przykładowe użycie szyfru i deszyfratora:
+
   
 function displayS() {
-  let przes = document.getElementById("przes").value;
-  let inputV = document.getElementById('dane').value;
-  if (przes < 0) {
-    przes = -przes;
-    console.log(inputV, przes , deszyfrujSzyfrCezara(inputV, przes) ,"---deszyfr");
-    document.getElementById('wynik').innerHTML = deszyfrujSzyfrCezara(inputV, przes);
+  let tekstDoZaszyfrowania = document.getElementById('dane').value;
+  let przesuniecie = Number(document.getElementById('przes').value);
+
+  if (przesuniecie < 0) { 
+    przesuniecie = -przesuniecie;
+    console.log(tekstDoZaszyfrowania, przesuniecie);
+    let odszyfrowanyTekst = odszyfrujTekst(tekstDoZaszyfrowania, przesuniecie);
+    console.log(odszyfrowanyTekst); // Ala ma kota
+    document.getElementById('wynik').innerHTML = odszyfrowanyTekst; //
   } else {
-    console.log(inputV, przes, szyfrujSzyfrCezara(inputV, przes), "---szyfr");
-    document.getElementById('wynik').innerHTML = szyfrujSzyfrCezara(inputV, przes);
+    console.log(tekstDoZaszyfrowania, przesuniecie);
+    let zaszyfrowanyTekst = zaszyfrujTekst(tekstDoZaszyfrowania, przesuniecie);
+    console.log(zaszyfrowanyTekst); // Dód pd nrwd
+    document.getElementById('wynik').innerHTML = zaszyfrowanyTekst; //
   }
   
-  
+
+
+
   }
