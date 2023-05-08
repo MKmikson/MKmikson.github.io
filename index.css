@@ -567,6 +567,10 @@ li{
     background-color: rgb(49, 14, 153);
 }
 
+#ex-title-h{
+    margin-top: -1vh;
+}
+
 #last-ex-desc{
 
     align-items: center;
