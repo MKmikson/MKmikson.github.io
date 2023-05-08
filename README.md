@@ -1,4 +1,4 @@
-# Strona-internetowa-o-sortowaiu
+# Strona-internetowa-o-szyfrach
 
 
 Strona została głownie stworzona na urządzenia 1920 x 1080 pikseli. (Na innych rozdzielczościach mogą występować pewne problemy graficzne)
