@@ -167,12 +167,32 @@ li{
     margin-left: 10vw;
     height: 40vh;
     width: 80vw;
+    /* justify-content: center; */
+    color:white;
+    /* align-items: center; */
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(31, 31, 31);
+    border:rgb(98,60,210) 6px solid;
+}
+
+#code-cpp-Mik{
+    margin-left: 10vw;
+    /* height: 40vh; */
+    width: 80vw;
     justify-content: center;
     color:white;
     align-items: center;
     display: flex;
+    flex-direction: column;
     background-color: rgb(31, 31, 31);
     border:rgb(98,60,210) 6px solid;
+}
+
+#cpp-Mik-top{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -5vw;
 }
 
 #code-cppS{
@@ -368,6 +388,7 @@ li{
 }
 
 #wikiTransfer{
+    margin-right: 2vw;
     border: 0px;
     cursor: pointer;
     height: 45px;

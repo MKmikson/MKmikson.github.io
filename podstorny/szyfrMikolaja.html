@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typy szyfrowań</title>
+    <link rel="stylesheet" href="../index.css">
+    
+</head>
+<body>
+    <div id="container">
+            <!-- głowne menu -->
+        <div id="menu" >
+                    <!-- logo strony -->
+                <div id="logo">
+                    <h1>Rodzaje szyfrów</h1>
+                </div>
+                    <!-- elementy menu -->
+                    <div id="siteNav">
+                        <a href="../index.html" id="siteEl"><img id="mainMenuImage" src="../images/ikonaStronaGłowna.png"> <div>Strona Główna</div></a>
+                        <a href="./szyfrCezara.html" id="siteEl"><img class="menuImage" src="../images/ikona szyfru janso niebieska.jpg"><div >Szyfr Cezara</div></a>
+                        <a href="./szyfrPolibiusza.html" id="siteEl"><img class="menuImage" src="../images/ikona szyfru niebieska.jpg"><div >Szyfr Polibiusza</div></a>
+                        <a href="./szyfrVigenera.html" id="siteEl"><img class="menuImage" src="../images/ikona szyfru fioletowa.jpg"><div >Szyfr Vigenère'a</div></a>
+                        <a href="./szyfrVernama.html" id="siteEl"><img class="menuImage" src="../images/ikona szyfru rozowa.jpg"><div >Szyfr Vernama</div></a>
+                    </div>         
+        </div>
+        <div id="separator"></div>
+            <!-- głowna tresc -->
+        <div  id="content">
+                <!-- opis strony -->
+            <div id="siteDescription">    
+                <h1 id="siteDescription-title">Szyfr Mikołaja</h1>
+                <p id="opis">Szyfr Cezara to jeden z najprostszych szyfrów przesuwających, który działa poprzez przesunięcie każdej litery w tekście o stałą liczbę pozycji w alfabecie. Konkretnie, każda litera jest zastępowana przez literę oddaloną od niej o określoną liczbę pozycji w alfabecie. Ta liczba nazywana jest kluczem szyfru, który musi być znany odbiorcy, aby odkodować wiadomość.
+
+                    Przykładowo, jeśli kluczem szyfru jest 3, to litera "A" zostanie zastąpiona przez literę "D", litera "B" zostanie zastąpiona przez "E", a litera "Z" zostanie zastąpiona przez literę "C". Przesunięcie może być wykonane w prawo lub w lewo i może być dowolną liczbą od 1 do 25.  W skrócie, szyfr Cezara jest łatwy do zrozumienia i zastosowania, ale nie oferuje wystarczającej ochrony przed zaawansowanymi metodami kryptoanalitycznymi
+                    
+                </p>
+                <div id="opis-zal">
+                    <p id="opis-p">Plusy szyfru Cezara:
+                        <ul>
+                            <li>Bardzo łatwy w zastosowaniu i zrozumieniu</li>
+                            <li>Szybki do zaszyfrowania i odszyfrowania</li>
+                            <li>Oferuje pewną formę zabezpieczenia przed atakiem siłowym, ponieważ klucz może przyjąć jedną z 25 możliwych wartości</li>
+                        </ul>
+                    </p>
+                    <p id="opis-m">
+                        Minusy szyfru Cezara:
+                        <ul>
+                            <li>Szyfr Cezara jest bardzo łatwy do złamania, ponieważ liczba możliwych kluczy jest niewielka i atakujący może stosować metodę "brute force" (próbowanie wszystkich możliwych kombinacji kluczy)</li>
+                            <li>Szyfr Cezara nie ukrywa częstotliwości występowania liter w tekście jawnym, co ułatwia kryptoanalizę</li>
+                            <li>Szyfr Cezara nie chroni przed atakami z użyciem analizy częstotliwości trójliterowych słów, które mogą być zidentyfikowane nawet w zaszyfrowanym tekście</li>
+                            <li>Szyfr Cezara nie jest bezpieczny w przypadku, gdy atakujący zna jakiś fragment tekstu jawnego, ponieważ może on użyć go do odkrycia klucza i odszyfrowania reszty tekstu</li>
+                        </ul>
+                    </p>
+                </div>
+                
+            </div>
+                <!-- przyklady szyfrów -->
+            <div>
+                    <!-- kod c++ -->
+                <div id="code-cpp-Mik">
+                    <div id="cpp-Mik-top">
+                        <pre class="language-javascript" id="code-cppS">
+                            const { randomInt } = require('crypto');
+                            const fs = require('fs');
+                            
+                            const lines = fs.readFileSync('./server/tekst.txt').toString().split('\r\n');
+                            const wynik = fs.WriteStream('./server/wynik.txt');
+                            
+                            function keyGenerator(view_text) {
+                              const bits = ["a", "b", "c", "d", "e", "f", "g",
+                               "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+                                "r", "s", "t", "u", "v", "w", "x", "y", "z", "0",
+                                 "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+                              let key ="";
+                              for (let i = 0; i < view_text.length; i++) { 
+                                const bit_number = randomInt(0, bits.length - 1);
+                                key += String.fromCharCode(view_text[i].charCodeAt() * bit_number);
+                              }
+                            
+                              return key;
+                            }
+                                                    </pre>
+                                                    <pre id="code-cppD">
+                            function hash(view_text, key) {
+                              let encrypted ="";
+                              for (let i = 0; i < view_text.length; i++){
+                                encrypted += String.fromCharCode(view_text[i].charCodeAt() + key[i].charCodeAt());
+                              }
+                            
+                              return encrypted;
+                            }
+                            
+                            function decrypt(hashed_text, key) { 
+                              let decrypted ="";
+                              for (let i = 0; i < hashed_text.length; i++){
+                                decrypted += String.fromCharCode(hashed_text[i].charCodeAt() - key[i].charCodeAt());
+                              }
+                            
+                              return decrypted;
+                            }
+                            
+                            
+                            </pre>
+                    </div>
+                    <div>
+                        <pre id="code-cppM">
+  
+                            for (let index in lines) {
+                                const line = lines[index];
+                                // console.log(line);
+                                const key = keyGenerator(line);
+                                const hashedText = hash(line, key);
+                                const decryptedText = decrypt(hashedText, key);
+                                console.log(key, " ---- keyGenerator");
+                                console.log(hashedText, " ---- hashed text");
+                                console.log(decryptedText, " ---- decrypted"+"\r\n");  
+                                wynik.write(hashedText +" ---> " +decryptedText + '\r\n' );
+                                
+                              }
+                                </pre>
+                    </div>
+                </div>
+                    <!-- input i dzialanie szyfru     nie działa-->   
+                <div id="examples">
+                    <div id="example-input">
+                        <div id="example-input-dane">
+                            <div id="example-input-dane-h1">
+                                <h1>Tekst do zaszyfrowania</h1>
+                            </div>
+                            <div id="example-input-dane-input">
+                                <input class="inputs" id="dane" type="text" placeholder="np. Ala ma kota"></input>
+                            </div>
+                            
+                        </div>
+                        <div id="example-input-key">
+                            <h1>Przesuniecie</h1>
+                            <input class="inputs" id="przes" type="number" placeholder="np. -2, 4, 6"></input>
+                            
+                        </div>
+                        <div>
+                            <button type="button" id="hash-btn" onclick="displayS()">Kliknij aby uruchomić szyfrowanie</button> 
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="example-output">
+                    <h1 id="example-output-h">Wynik: </h1>
+                    <p id="wynik"></p>
+                </div>
+                <div id="explanation">
+                    <p>Aby odszyfrować tekst wklej wynik szyfrowania do tekstu do zaszyfrowania oraz z przodu przesunięcia dodaj znak: - (np. -3)</p>
+                </div>
+                <div id="cppBtn">
+                    <div id="cppBtnTitle">
+                        <p>Pobierz pliki C++</p>
+                    </div>
+        
+                    <div>
+                        <a href="../c++/c++.rar"><input type="button" value="Pobierz" id="cppD-btn"></a>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        
+            
+        
+        <div id="footer"> <p id="footer-p">Mikołaj Ronczewski &copy</p> </div>
+    </div>
+    <script src="../modules/szyfrCezara/szyfrator.js" ></script>
+</body>
+</html>
