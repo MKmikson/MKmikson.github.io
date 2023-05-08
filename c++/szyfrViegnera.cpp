@@ -50,7 +50,7 @@ int main(){
     ifstream plikWe("./tekst.txt");
     ofstream wynik("./wynik.txt");
     string tekst;
-    string kod = "KOD";
+    string kod;
     cout << "Kod: ";
     cin >> kod;
 
