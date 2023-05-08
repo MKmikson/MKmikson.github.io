@@ -4,7 +4,7 @@
 Strona została głownie stworzona na urządzenia 1920 x 1080 pikseli. (Na innych rozdzielczościach mogą występować pewne problemy graficzne)
   
 
-Strona-internetowa-o-sortowaiu 
+Strona internetowa o szyfrach 
     Wygląd: składa się ze strony głównej (index.html) oraz 4 podstron (szyfrCezara.html, szufrPolibiusza.html, szyfrVigenera.html, 
         szyfrVernama.html). Za wygląd strony głownej i podstron odpowiada plik (index.css)
 
