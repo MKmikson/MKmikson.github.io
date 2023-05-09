@@ -1,5 +1,6 @@
 # Strona-internetowa-o-szyfrach
 
+Aby uruchomić strone należy kliknąć plik index.html
 
 Strona została głownie stworzona na urządzenia 1920 x 1080 pikseli. (Na innych rozdzielczościach mogą występować pewne problemy graficzne)
   
